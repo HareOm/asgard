@@ -24,7 +24,11 @@ module.exports = function(grunt) {
         files: {
           'assets/css/main.min.css': [
             'assets/sass/app.scss'
+          ],
+          'css/buddypress.css': [
+            'assets/sass/buddypress.scss'
           ]
+          
         }
       }
     },
