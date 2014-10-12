@@ -1,0 +1,23 @@
+{
+  "name": "asgard",
+  "version": "0.1.0",
+  "homepage": "https://github.com/greghunt/asgard",
+  "authors": [
+    "Greg <greg@jtdsolutions.com>"
+  ],
+  "description": "Main WP Theme for Valhalla Movement",
+  "main": "index.php",
+  "keywords": [
+    "valhalla",
+    "wordpress"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "assets/vendor",
+    "test",
+    "tests"
+  ]
+}

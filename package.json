@@ -1,14 +1,11 @@
 {
-  "name": "roots",
-  "version": "6.5.2",
-  "author": "Ben Word <ben@benword.com>",
-  "homepage": "http://roots.io",
+  "name": "asgard",
+  "version": "0.1.0",
+  "author": "Greg Hunt <greg@jtdsolutions.com>",
+  "homepage": "http://greghunt.ca",
   "repository": {
     "type": "git",
-    "url": "git://github.com/roots/roots.git"
-  },
-  "bugs": {
-    "url": "https://github.com/roots/roots/issues"
+    "url": "git://github.com/greghunt/asgard.git"
   },
   "licenses": [
     {
