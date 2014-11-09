@@ -123,6 +123,7 @@ function val_post_type() {
 	$args = array(
 		'label'               => __( 'Images', 'text_domain' ),
 		'description'         => __( 'User submitted images', 'text_domain' ),
+		'taxonomies'         	=> array('category', 'post_tag'),
 		'labels'              => $labels,
 		'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'page-attributes', ),
 		'hierarchical'        => true,
@@ -169,6 +170,7 @@ function val_post_type() {
 	$args = array(
 		'label'               => __( 'Videos', 'text_domain' ),
 		'description'         => __( 'User submitted videos', 'text_domain' ),
+		'taxonomies'         	=> array('category', 'post_tag'),
 		'labels'              => $labels,
 		'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'page-attributes', ),
 		'hierarchical'        => true,
