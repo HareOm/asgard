@@ -74,6 +74,7 @@ Template Name: Images Submit
         </div>
 
         <script type="text/javascript">
+        jQuery(document).ready(function($) {
 
             $("[name='image']").on('change', function(){
                 input = this;
@@ -126,6 +127,7 @@ Template Name: Images Submit
                 }
             });
 
+        });
         </script>
 
         <?php } else { ?>
