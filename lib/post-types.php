@@ -115,7 +115,7 @@ function val_post_type() {
 		'not_found_in_trash'  => __( 'Not found in Trash', 'text_domain' ),
 	);
 	$rewrite = array(
-		'slug'                => 'images',
+		'slug'                => 'image',
 		'with_front'          => true,
 		'pages'               => true,
 		'feeds'               => true,
@@ -135,7 +135,7 @@ function val_post_type() {
 		'menu_position'       => 5,
 		'menu_icon'           => 'dashicons-format-image',
 		'can_export'          => true,
-		'has_archive'         => true,
+		'has_archive'         => false,
 		'exclude_from_search' => false,
 		'publicly_queryable'  => true,
 		'rewrite'             => $rewrite,
@@ -162,7 +162,7 @@ function val_post_type() {
 		'not_found_in_trash'  => __( 'Not found in Trash', 'text_domain' ),
 	);
 	$rewrite = array(
-		'slug'                => 'videos',
+		'slug'                => 'video',
 		'with_front'          => true,
 		'pages'               => true,
 		'feeds'               => true,
@@ -182,7 +182,7 @@ function val_post_type() {
 		'menu_position'       => 5,
 		'menu_icon'           => 'dashicons-format-video',
 		'can_export'          => true,
-		'has_archive'         => true,
+		'has_archive'         => false,
 		'exclude_from_search' => false,
 		'publicly_queryable'  => true,
 		'rewrite'             => $rewrite,
