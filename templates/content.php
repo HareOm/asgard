@@ -1,10 +1,16 @@
 <article <?php post_class("row"); ?>>
   <div class="col-md-3">
-    <div class="votes">
+    <?php
+      if(has_post_thumbnail()) {
+        the_post_thumbnail('thumbnail');
+      }
+    ?>
+
+    <!-- <div class="votes">
         <?php if(function_exists('the_voting_html')){
             echo get_the_voting_html(false);
         } ?>
-    </div>
+    </div> -->
   </div>
   <div class="col-md-9">
     <header>
