@@ -7,6 +7,28 @@
   <?php get_search_form(); ?>
 <?php endif; ?>
 
+<?php
+$post_type = get_post_type();
+$term = get_query_var( "term" );
+$filters = get_terms_by_post_type(array("category"), array(get_post_type()));
+?>
+
+<ul class="nav nav-pills" role="tablist">
+
+<?php foreach($filters as $filter): ?>
+  <li<?php if($term == $filter->slug) echo ' class="active"' ?>><a href="<?php echo home_url("/{$post_type}s/?term={$filter->slug}") ?>"><?php echo $filter->name ?></a>
+<?php endforeach; ?>
+</ul>
+
+<?php
+$args = array(
+	'post_type'=> $post_type,
+	'category_name'    => $term,
+  'orderby' => 'date',
+	'order'    => 'DESC'
+);
+query_posts( $args )
+?>
 <?php while (have_posts()) : the_post(); ?>
   <?php get_template_part('templates/content', get_post_format()); ?>
 <?php endwhile; ?>
