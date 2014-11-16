@@ -3,6 +3,48 @@
  * Custom functions
  */
 
+function the_type_filter($post_type = NULL) {
+if( !$post_type ){
+  $post_type = get_post_type();
+}
+$post_types = get_post_types(array(
+  "publicly_queryable" => true,
+));
+$exclude_post_types = array("attachment", "manifesto", "press_release");
+?>
+
+<ul class="nav nav-pills" role="tablist">
+<?php foreach($post_types as $pt): ?>
+  <?php if( !in_array($pt, $exclude_post_types) ): ?>
+  <?php
+  if( $pt == "post" ) {
+    $name = "Article";
+  } else {
+    $name = ucfirst($pt);
+  }
+
+  ?>
+  <li<?php if($post_type == $pt) echo ' class="active"' ?>><a href="#"><?php echo $name ?></a>
+  <?php endif ?>
+<?php endforeach; ?>
+</ul>
+<?php
+
+}
+
+function the_category_filter($post_type) {
+$this_cat_id = get_query_var('cat');
+$categories = get_terms_by_post_type(array("category"), array($post_type));
+?>
+<ul class="nav nav-pills" role="tablist">
+<?php foreach($categories as $cat): ?>
+  <li<?php if($this_cat_id == $cat->term_id) echo ' class="active"' ?>>
+    <a href="<?php echo home_url('category/'. $cat->slug . '?post_type=' . $post_type) ?>"><?php echo $cat->name ?></a>
+<?php endforeach; ?>
+</ul>
+<?php
+}
+
 function get_terms_by_post_type( $taxonomies, $post_types ) {
 
     global $wpdb;

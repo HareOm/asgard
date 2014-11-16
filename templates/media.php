@@ -3,16 +3,19 @@
 * Template Name: Media
 */
 ?>
-<?php get_template_part('templates/page', 'header'); ?>
-
 <?php
-
+//SET UP VARS
 //Set the post type in the page template's custom field
 if( get_post_meta($post->ID, 'post_type', TRUE) ) {
   $post_type = get_post_meta($post->ID, 'post_type', TRUE);
 } else {
   $post_type = 'post';
 }
+
+?>
+<?php get_template_part('templates/page', 'header'); ?>
+
+<?php
 
 $query = array(
   "post_type" => $post_type,
@@ -30,16 +33,9 @@ $media_query = new WP_Query($query);
   <?php get_search_form(); ?>
 <?php endif; ?>
 
-<?php
-$term = get_query_var( "term" );
-$filters = get_terms_by_post_type(array("category"), array($post_type));
-?>
-
-<ul class="nav nav-pills" role="tablist">
-<?php foreach($filters as $filter): ?>
-  <li<?php if($term == $filter->slug) echo ' class="active"' ?>><a href="<?php echo get_term_link($filter) ?>"><?php echo $filter->name ?></a>
-<?php endforeach; ?>
-</ul>
+<?php the_type_filter($post_type) ?>
+<hr>
+<?php the_category_filter($post_type); ?>
 
 <?php while ($media_query->have_posts()) : $media_query->the_post(); ?>
   <?php get_template_part('templates/content', get_post_format()); ?>
