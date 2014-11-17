@@ -60,9 +60,9 @@ $media_query = new WP_Query( $args );
   <?php get_search_form(); ?>
 <?php endif; ?>
 
-<?php the_date_filter($post_type) ?>
-<hr>
 <?php the_type_filter($post_type) ?>
+<hr>
+<?php the_date_filter($post_type) ?>
 <hr>
 <?php the_category_filter($post_type); ?>
 

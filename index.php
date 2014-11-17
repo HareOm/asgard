@@ -4,6 +4,7 @@ $post_type = get_post_type();
 
 $date = $_GET['date'];
 $today = getdate();
+$category = get_query_var('cat');
 
 if( $date == "week" ) {
   $date_query = array(
@@ -29,6 +30,7 @@ $args = array(
 	'post_status'    => 'publish',
 	'orderby'        => 'date',
 	'order'          => 'DESC',
+  'cat'            => $category,
 	'date_query'     => array($date_query),
 );
 $the_query = new WP_Query( $args );
@@ -43,9 +45,9 @@ $the_query = new WP_Query( $args );
   <?php get_search_form(); ?>
 <?php endif; ?>
 
-<?php the_date_filter($post_type) ?>
-<hr>
 <?php the_type_filter($post_type) ?>
+<hr>
+<?php the_date_filter($post_type) ?>
 <hr>
 <?php the_category_filter($post_type); ?>
 

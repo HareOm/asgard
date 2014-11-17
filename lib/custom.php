@@ -42,8 +42,19 @@ $exclude_post_types = array("attachment", "manifesto", "press_release");
     $name = ucfirst($pt);
   }
 
+  if( is_category() ) {
+    $url = add_query_arg("post_type", $pt);
+  } elseif($pt == "image") {
+    $url = home_url("images");
+  } elseif($pt == "video") {
+    $url = home_url("videos");
+  } else {
+    $url = home_url("articles");
+  }
+
   ?>
-  <li<?php if($post_type == $pt) echo ' class="active"' ?>><a href="<?php echo add_query_arg("post_type", $pt); ?>"><?php echo $name ?></a>
+  <li<?php if($post_type == $pt) echo ' class="active"' ?>>
+    <a href="<?php echo $url; ?>"><?php echo $name ?></a>
   <?php endif ?>
 <?php endforeach; ?>
 </ul>
