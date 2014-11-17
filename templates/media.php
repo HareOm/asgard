@@ -13,19 +13,45 @@ if( get_post_meta($post->ID, 'post_type', TRUE) ) {
   $post_type = 'post';
 }
 
+if( $_GET['date'] ) {
+  $date = $_GET['date'];
+} else {
+  $date = "all";
+}
+
+$today = getdate();
+
+if( $date == "week" ) {
+  $date_query = array(
+    'after' => '1 week ago'
+  );
+} elseif( $date == "month" ) {
+  $date_query = array(
+    'year'  => $today['year'],
+    'month' => $today['mon'],
+  );
+} elseif( $date == "today" ) {
+  $date_query = array(
+    'year'  => $today['year'],
+    'month' => $today['mon'],
+    'day'   => $today['mday'],
+  );
+} else {
+  $date_query = array();
+}
+
+$args = array(
+  'post_type'      => $post_type,
+  'post_status'    => 'publish',
+  'orderby'        => 'date',
+  'order'          => 'DESC',
+  'date_query'     => array($date_query),
+);
+$media_query = new WP_Query( $args );
+
+
 ?>
 <?php get_template_part('templates/page', 'header'); ?>
-
-<?php
-
-$query = array(
-  "post_type" => $post_type,
-  "orderby" => "date",
-  "order" => "DESC"
-);
-$media_query = new WP_Query($query);
-
-?>
 
 <?php if (!$media_query->have_posts()) : ?>
   <div class="alert alert-warning">

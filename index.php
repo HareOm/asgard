@@ -1,12 +1,42 @@
 <?php
 //SET UP VARS
 $post_type = get_post_type();
+
 $date = $_GET['date'];
+$today = getdate();
+
+if( $date == "week" ) {
+  $date_query = array(
+    'after' => '1 week ago'
+  );
+} elseif( $date == "month" ) {
+  $date_query = array(
+    'year'  => $today['year'],
+    'month' => $today['mon'],
+  );
+} elseif( $date == "today" ) {
+  $date_query = array(
+    'year'  => $today['year'],
+    'month' => $today['mon'],
+    'day'   => $today['mday'],
+  );
+} else {
+  $date_query = array();
+}
+
+$args = array(
+  'post_type'      => $post_type,
+	'post_status'    => 'publish',
+	'orderby'        => 'date',
+	'order'          => 'DESC',
+	'date_query'     => array($date_query),
+);
+$the_query = new WP_Query( $args );
 
 ?>
 <?php get_template_part('templates/page', 'header'); ?>
 
-<?php if (!have_posts()) : ?>
+<?php if (!$the_query->have_posts()) : ?>
   <div class="alert alert-warning">
     <?php _e('Sorry, no results were found.', 'roots'); ?>
   </div>
@@ -20,7 +50,7 @@ $date = $_GET['date'];
 <?php the_category_filter($post_type); ?>
 
 
-<?php while (have_posts()) : the_post(); ?>
+<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
   <?php get_template_part('templates/content', get_post_format()); ?>
 <?php endwhile; ?>
 
