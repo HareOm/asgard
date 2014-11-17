@@ -5,6 +5,7 @@
 ?>
 <?php
 //SET UP VARS
+
 //Set the post type in the page template's custom field
 if( get_post_meta($post->ID, 'post_type', TRUE) ) {
   $post_type = get_post_meta($post->ID, 'post_type', TRUE);
@@ -33,6 +34,8 @@ $media_query = new WP_Query($query);
   <?php get_search_form(); ?>
 <?php endif; ?>
 
+<?php the_date_filter($post_type) ?>
+<hr>
 <?php the_type_filter($post_type) ?>
 <hr>
 <?php the_category_filter($post_type); ?>

@@ -3,6 +3,25 @@
  * Custom functions
  */
 
+function the_date_filter($post_type = NULL) {
+
+if( !$post_type ){
+  $post_type = get_post_type();
+}
+
+?>
+
+<ul class="nav nav-pills" role="tablist">
+  <li<?php if( $_GET['date'] == 'today') echo ' class="active"'; ?>><a href="<?php echo add_query_arg("date", "today") ?>">Today</a>
+  <li<?php if( $_GET['date'] == 'week') echo ' class="active"'; ?>><a href="<?php echo add_query_arg("date", "week") ?>">This Week</a>
+  <li<?php if( $_GET['date'] == 'month') echo ' class="active"'; ?>><a href="<?php echo add_query_arg("date", "month") ?>">This Month</a>
+  <li<?php if( $_GET['date'] == 'all') echo ' class="active"'; ?>><a href="<?php echo add_query_arg("date", "all") ?>">All Time</a>
+</ul>
+
+<?php
+}
+
+
 function the_type_filter($post_type = NULL) {
 if( !$post_type ){
   $post_type = get_post_type();
@@ -24,7 +43,7 @@ $exclude_post_types = array("attachment", "manifesto", "press_release");
   }
 
   ?>
-  <li<?php if($post_type == $pt) echo ' class="active"' ?>><a href="#"><?php echo $name ?></a>
+  <li<?php if($post_type == $pt) echo ' class="active"' ?>><a href="<?php echo add_query_arg("post_type", $pt); ?>"><?php echo $name ?></a>
   <?php endif ?>
 <?php endforeach; ?>
 </ul>

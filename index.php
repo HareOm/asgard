@@ -1,6 +1,8 @@
 <?php
 //SET UP VARS
 $post_type = get_post_type();
+$date = $_GET['date'];
+
 ?>
 <?php get_template_part('templates/page', 'header'); ?>
 
@@ -11,7 +13,8 @@ $post_type = get_post_type();
   <?php get_search_form(); ?>
 <?php endif; ?>
 
-
+<?php the_date_filter($post_type) ?>
+<hr>
 <?php the_type_filter($post_type) ?>
 <hr>
 <?php the_category_filter($post_type); ?>
