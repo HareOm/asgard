@@ -43,8 +43,9 @@ if( $date == "week" ) {
 $args = array(
   'post_type'      => $post_type,
   'post_status'    => 'publish',
-  'orderby'        => 'date',
   'order'          => 'DESC',
+  'meta_key'       => 'hethens_vote_count',
+  'orderby'        => 'meta_value_num date',
   'date_query'     => array($date_query),
 );
 $media_query = new WP_Query( $args );

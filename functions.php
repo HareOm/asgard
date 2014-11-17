@@ -34,3 +34,18 @@ function roots_cpt_active_menu($menu) {
   return $menu;
 }
 add_filter('nav_menu_css_class', 'roots_cpt_active_menu', 400);
+
+// Add default value to voting meta
+function set_default_meta($post_ID){
+    $current_field_value = get_post_meta($post_ID, 'hethens_vote_count', true);
+    $current_field_value2 = get_post_meta($post_ID, 'hethens_admin_vote_count', true);
+    $default_meta = '0';
+    if ($current_field_value == '' && !wp_is_post_revision($post_ID)){
+        add_post_meta($post_ID, 'hethens_vote_count', $default_meta,true);
+    }
+    if ($current_field_value2 == '' && !wp_is_post_revision($post_ID)){
+        add_post_meta($post_ID, 'hethens_admin_vote_count', $default_meta, true);
+    }
+    return $post_ID;
+}
+add_action('wp_insert_post','set_default_meta');
