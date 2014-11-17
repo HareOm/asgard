@@ -45,13 +45,6 @@ $the_query = new WP_Query( $args );
   <?php get_search_form(); ?>
 <?php endif; ?>
 
-<?php the_type_filter($post_type) ?>
-<hr>
-<?php the_date_filter($post_type) ?>
-<hr>
-<?php the_category_filter($post_type); ?>
-
-
 <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
   <?php get_template_part('templates/content', get_post_format()); ?>
 <?php endwhile; ?>
