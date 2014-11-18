@@ -6,7 +6,7 @@
  * replace the dash with an underscore when adding it to the object below.
  *
  * .noConflict()
- * The routing is enclosed within an anonymous function so that you can 
+ * The routing is enclosed within an anonymous function so that you can
  * always reference jQuery with $, even when in .noConflict() mode.
  *
  * Google CDN, Latest jQuery
@@ -16,7 +16,7 @@
 
 (function($) {
 
-// Use this variable to set up the common and page specific functions. If you 
+// Use this variable to set up the common and page specific functions. If you
 // rename this variable, you will also need to rename the namespace below.
 var Roots = {
   // All pages
@@ -59,5 +59,56 @@ var UTIL = {
 };
 
 $(document).ready(UTIL.loadEvents);
+
+  $('#nav-faq').waypoint('sticky', {
+    offset: 20 // Apply "stuck" when element 30px from top
+  });
+
+  var lastId,
+    topMenu = $('#nav-faq'),
+    //topMenuHeight = topMenu.outerHeight(),
+    topMenuHeight = 20,
+    // All list items
+    menuItems = topMenu.find('a'),
+    // Anchors corresponding to menu items
+    scrollItems = menuItems.map(function(){
+      var item = $($(this).attr('href'));
+      if (item.length) { return item; }
+    });
+
+  // Bind click handler to menu items
+  // so we can get a fancy scroll animation
+  menuItems.click(function(e){
+    var href = $(this).attr('href'),
+      offsetTop = href === '#' ? 0 : $(href).offset().top-topMenuHeight+1;
+    $('html, body').stop().animate({
+      scrollTop: offsetTop
+    }, 300);
+    e.preventDefault();
+  });
+
+  // Bind to scroll
+  $(window).scroll(function(){
+     // Get container scroll position
+     var fromTop = $(this).scrollTop()+topMenuHeight;
+
+     // Get id of current scroll item
+     var cur = scrollItems.map(function(){
+       if ($(this).offset().top < fromTop) {
+         return this;
+       }
+     });
+     // Get the id of the current element
+     cur = cur[cur.length-1];
+     var id = cur && cur.length ? cur[0].id : '';
+
+     if (lastId !== id) {
+       lastId = id;
+       // Set/remove active class
+       menuItems
+       .parents('li').removeClass('active')
+       .end().filter('[href=#'+id+']').parents('li').addClass('active');
+     }
+  });
 
 })(jQuery); // Fully reference jQuery after this point.

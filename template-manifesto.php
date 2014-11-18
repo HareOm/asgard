@@ -5,8 +5,10 @@
 
 */
 ?>
-<div class="faq container cf">
-  <h1 class="page-title page-title-lined"><?php the_title() ?></h1>
+<div class="faq">
+  <div class="page-header">
+    <h1><?php the_title() ?></h1>
+  </div>
   <div class="row">
     <div class="col-md-4">
       <nav id="nav-faq" class="nav-faq">
@@ -158,56 +160,3 @@
     </div>
   </div>
 </div>
-<script>
-jQuery(document).ready(function($) {
-    $("#nav-faq").sticky({topSpacing:20});
-
-  	var lastId,
-  		topMenu = $("#nav-faq"),
-  		//topMenuHeight = topMenu.outerHeight(),
-  		topMenuHeight = 20,
-  		// All list items
-  		menuItems = topMenu.find("a"),
-  		// Anchors corresponding to menu items
-  		scrollItems = menuItems.map(function(){
-  		  var item = $($(this).attr("href"));
-  		  if (item.length) { return item; }
-  		});
-
-  	// Bind click handler to menu items
-  	// so we can get a fancy scroll animation
-  	menuItems.click(function(e){
-  	  var href = $(this).attr("href"),
-  		  offsetTop = href === "#" ? 0 : $(href).offset().top-topMenuHeight+1;
-  	  $('html, body').stop().animate({
-  		  scrollTop: offsetTop
-  	  }, 300);
-  	  e.preventDefault();
-  	});
-
-  	// Bind to scroll
-  	$(window).scroll(function(){
-  	   // Get container scroll position
-  	   var fromTop = $(this).scrollTop()+topMenuHeight;
-
-  	   // Get id of current scroll item
-  	   var cur = scrollItems.map(function(){
-  		 if ($(this).offset().top < fromTop)
-  		   return this;
-  	   });
-  	   // Get the id of the current element
-  	   cur = cur[cur.length-1];
-  	   var id = cur && cur.length ? cur[0].id : "";
-
-  	   if (lastId !== id) {
-  		   lastId = id;
-  		   // Set/remove active class
-  		   menuItems
-  			 .parents("li").removeClass("active")
-  			 .end().filter("[href=#"+id+"]").parents("li").addClass("active");
-  	   }
-  	});
-
-
-  });
-</script>
