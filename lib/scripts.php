@@ -12,7 +12,7 @@
  */
 function roots_scripts() {
 
-  wp_enqueue_style('roots_main', get_template_directory_uri() . '/assets/css/main.min.css', false, '968de9786e0434dd0ce5247f022b744c');
+  wp_enqueue_style('roots_main', get_template_directory_uri() . '/assets/css/main.min.css', false, '62562ac4a2bd6d2cbc0a0b24ce3b14d4');
 
   // jQuery is loaded using the same method from HTML5 Boilerplate:
   // Grab Google CDN's latest jQuery with a protocol relative URL; fallback to local if offline
@@ -28,10 +28,15 @@ function roots_scripts() {
   }
 
   wp_register_script('modernizr', get_template_directory_uri() . '/assets/js/vendor/modernizr-2.7.0.min.js', array(), null, false);
-  wp_register_script('roots_scripts', get_template_directory_uri() . '/assets/js/scripts.min.js', array(), 'fe2e40048558df532cf47f556ec74f47', true);
+  wp_register_script('roots_scripts', get_template_directory_uri() . '/assets/js/scripts.min.js', array(), 'ac18b05796661db4efb05aa001c0ff5c', true);
   wp_register_script('jquery-validation', get_template_directory_uri() . '/assets/vendor/jquery-validation/dist/jquery.validate.min.js', array('jquery'), null, true);
   wp_register_script('jquery-waypoints', get_template_directory_uri() . '/assets/vendor/jquery-waypoints/waypoints.min.js', array('jquery'), null, true);
   wp_register_script('jquery-waypoints-sticky', get_template_directory_uri() . '/assets/vendor/jquery-waypoints/shortcuts/sticky-elements/waypoints-sticky.min.js', array('jquery','jquery-waypoints'), null, true);
+  wp_register_script('asgard-helpout', get_template_directory_uri() . '/assets/js/helpout.js', array('jquery'), null, true);
+
+  if( is_page_template('template-helpout.php') ) {
+    wp_enqueue_script('asgard-helpout');
+  }
 
   wp_enqueue_script('modernizr');
   wp_enqueue_script('jquery');
@@ -39,8 +44,15 @@ function roots_scripts() {
   wp_enqueue_script('jquery-waypoints');
   wp_enqueue_script('jquery-waypoints-sticky');
   wp_enqueue_script('roots_scripts');
+
+
 }
 add_action('wp_enqueue_scripts', 'roots_scripts', 100);
+
+function asgard_add_fb_root(){
+  echo '<div id="fb-root"></div>';
+}
+add_action('after_body_open','asgard_add_fb_root');
 
 // http://wordpress.stackexchange.com/a/12450
 function roots_jquery_local_fallback($src, $handle = null) {
