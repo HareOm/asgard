@@ -5,6 +5,8 @@
 $bootstrap-sass-asset-helper: false;
 @import "bootstrap/bootstrap";
 @import "../vendor/fontawesome/css/font-awesome.min.css"; //change to sass when deploying
+
+@import "vars";
 @import "modules/faq";
 @import "modules/lists";
 @import "modules/helpout";
@@ -14,7 +16,8 @@ $bootstrap-sass-asset-helper: false;
    ========================================================================== */
 
 body {
-
+  background-color: $background-color;
+  color: $text-color;
 }
 
 
@@ -25,7 +28,13 @@ body {
 
 .banner { }
 
+.nav-para {
+  text-align: right;
 
+  .dropdown-menu {
+    text-align: center;
+  }
+}
 
 /* ==========================================================================
    Content
