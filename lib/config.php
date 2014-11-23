@@ -21,6 +21,8 @@ function roots_main_class() {
   if (roots_display_sidebar()) {
     // Classes on pages with the sidebar
     $class = 'col-sm-8';
+  } elseif( is_single() ) {
+    $class = 'col-md-8 col-md-offset-2';
   } else {
     // Classes on full width pages
     $class = 'col-sm-12';
@@ -28,6 +30,7 @@ function roots_main_class() {
 
   return $class;
 }
+add_filter('roots/main_class', 'roots_main_class');
 
 /**
  * .sidebar classes
@@ -35,6 +38,7 @@ function roots_main_class() {
 function roots_sidebar_class() {
   return 'col-sm-4';
 }
+add_filter('roots/sidebar_class', 'roots_sidebar_class');
 
 /**
  * Define which pages shouldn't have the sidebar

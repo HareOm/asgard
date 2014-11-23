@@ -75,6 +75,27 @@ $categories = get_terms_by_post_type(array("category"), array($post_type));
 <?php
 }
 
+//add_filter('roots/main_class', 'roots_main_class_adjust');
+
+// function roots_main_class_adjust($class) {
+//
+//   global $class;
+//
+//   if (roots_display_sidebar()) {
+//
+//     // Classes on pages with the sidebar
+//     $class = 'col-sm-1';
+//
+//   } else {
+//
+//     // Classes on full width pages
+//     $class = 'col-sm-12';
+//   }
+//
+//   return $class;
+// }
+
+
 function get_terms_by_post_type( $taxonomies, $post_types ) {
 
     global $wpdb;

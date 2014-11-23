@@ -1,6 +1,6 @@
 <header class="banner" role="banner">
-  <div class="container">
-    <div class="nav-para">
+  <div class="nav-para">
+    <div class="container">
     <?php
       if (has_nav_menu('secondary_navigation')) :
         wp_nav_menu(array('theme_location' => 'secondary_navigation', 'menu_class' => 'list-inline' ));
@@ -8,7 +8,7 @@
     ?>
     </div>
   </div>
-  <div class="navbar navbar-default navbar-static-top">
+  <div class="navbar navbar-inverse navbar-asgard navbar-static-top">
     <div class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -22,7 +22,7 @@
 
       <div class="navbar-right" role="navigation">
         <?php
-          if (has_nav_menu('logged_navigation')) :
+          if (has_nav_menu('submit_navigation')) :
             wp_nav_menu(array('theme_location' => 'submit_navigation', 'menu_class' => 'nav navbar-nav'));
           endif;
         ?>
