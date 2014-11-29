@@ -88,6 +88,8 @@ $(document).ready(UTIL.loadEvents);
     offset: 20 // Apply "stuck" when element 30px from top
   });
 
+  $('.vid-res').fitVids();
+
   var lastId,
     topMenu = $('#nav-faq'),
     //topMenuHeight = topMenu.outerHeight(),

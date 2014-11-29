@@ -15,8 +15,10 @@
     } else {
       get_template_part('templates/header');
     }
+
   ?>
 
+  <?php if( !in_array(get_page_template_slug(), $asgard_full_width_templates) ): //full width ?>
   <div class="wrap container" role="document">
     <div class="content row">
       <main class="main <?php echo apply_filters('roots/main_class'); ?>" role="main">
@@ -29,6 +31,15 @@
       <?php endif; ?>
     </div><!-- /.content -->
   </div><!-- /.wrap -->
+  <?php else: ?>
+  <div role="document">
+    <div class="content">
+      <main class="main" role="main">
+        <?php include roots_template_path(); ?>
+      </main><!-- /.main -->
+    </div><!-- /.content -->
+  </div><!-- /.wrap -->
+  <?php endif ?>
 
   <?php get_template_part('templates/footer'); ?>
 

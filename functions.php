@@ -19,6 +19,8 @@ require_once locate_template('/lib/scripts.php');         // Scripts and stylesh
 require_once locate_template('/lib/custom.php');          // Custom functions
 require_once locate_template('/lib/post-types.php');      // Register Custom Post Types
 
+//Asgard Includes
+require_once locate_template('/vendor/advanced-custom-fields/acf.php');      // Advanced Custom Fields
 
 // Fix nav menu active classes for custom post types
 function roots_cpt_active_menu($menu) {

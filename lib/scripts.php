@@ -12,7 +12,7 @@
  */
 function roots_scripts() {
 
-  wp_enqueue_style('roots_main', get_template_directory_uri() . '/assets/css/main.min.css', false, '7b18432ab50300bf52b12d133634038c');
+  wp_enqueue_style('roots_main', get_template_directory_uri() . '/assets/css/main.min.css', false, '17806ec30c0fec28412ac0ce648922c8');
 
   // jQuery is loaded using the same method from HTML5 Boilerplate:
   // Grab Google CDN's latest jQuery with a protocol relative URL; fallback to local if offline
@@ -28,10 +28,11 @@ function roots_scripts() {
   }
 
   wp_register_script('modernizr', get_template_directory_uri() . '/assets/js/vendor/modernizr-2.7.0.min.js', array(), null, false);
-  wp_register_script('roots_scripts', get_template_directory_uri() . '/assets/js/scripts.min.js', array(), 'ac18b05796661db4efb05aa001c0ff5c', true);
+  wp_register_script('roots_scripts', get_template_directory_uri() . '/assets/js/scripts.min.js', array(), '3c0c8b00e997063d8380a339de158f98', true);
   wp_register_script('jquery-validation', get_template_directory_uri() . '/assets/vendor/jquery-validation/dist/jquery.validate.min.js', array('jquery'), null, true);
   wp_register_script('jquery-waypoints', get_template_directory_uri() . '/assets/vendor/jquery-waypoints/waypoints.min.js', array('jquery'), null, true);
   wp_register_script('jquery-waypoints-sticky', get_template_directory_uri() . '/assets/vendor/jquery-waypoints/shortcuts/sticky-elements/waypoints-sticky.min.js', array('jquery','jquery-waypoints'), null, true);
+  wp_register_script('fitvids', get_template_directory_uri() . '/assets/vendor/fitvids/jquery.fitvids.js', array('jquery'), null, true);
   wp_register_script('asgard-helpout', get_template_directory_uri() . '/assets/js/helpout.js', array('jquery'), null, true);
 
   if( is_page_template('template-helpout.php') ) {
@@ -43,6 +44,7 @@ function roots_scripts() {
   wp_enqueue_script('jquery-validation');
   wp_enqueue_script('jquery-waypoints');
   wp_enqueue_script('jquery-waypoints-sticky');
+  wp_enqueue_script('fitvids');
   wp_enqueue_script('roots_scripts');
 
 

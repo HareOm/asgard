@@ -23,6 +23,7 @@
   "dependencies": {
     "jquery-validation": "~1.13.1",
     "jquery-waypoints": "~2.0.5",
-    "fontawesome": "~4.2.0"
+    "fontawesome": "~4.2.0",
+    "fitvids": "~1.1.0"
   }
 }

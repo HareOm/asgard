@@ -68,6 +68,7 @@ function roots_display_sidebar() {
     array(
       'template-helpout.php',
       'template-media.php',
+      'template-mission.php',
       'template-manifesto.php'
     )
   );
@@ -83,3 +84,8 @@ function roots_display_sidebar() {
  * Default: 1140px is the default Bootstrap container width.
  */
 if (!isset($content_width)) { $content_width = 1140; }
+
+
+$asgard_full_width_templates = array(
+  "template-mission.php"
+);
