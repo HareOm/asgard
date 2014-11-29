@@ -6,7 +6,7 @@ Template Name: Mission
 
 <article id="post-<?php the_ID(); ?>">
 
-  <div class="mission-section ms-dark">
+  <div class="mission-section">
     <div class="container">
       <header class="ms-header">
         <?php the_content() ?>
@@ -24,10 +24,10 @@ Template Name: Mission
           <p>Through ecologically sustainable lifestyles, economic self-reliance in local communities, and global collaborative action for the benefit of all, freedom culture can become the new normal.
         </div>
       </div>
-      <p class="ms-liaison"><a href="#ms-cta" class="btn btn-lg btn-primary">Here's how <i class="fa fa-arrow-circle-right"></i></a>
+      <p class="ms-liaison"><a href="#ms-cta">Here's how <i class="fa fa-arrow-circle-right"></i></a>
     </div>
   </div>
-  <section id="ms-cta" class="mission-section ms-lime">
+  <section id="ms-cta" class="mission-section s-lime">
     <div class="container text-center">
       <p>Play a part in making sustainability mainstream and proliferating<br>Freedom Culture by <strong>sharing this movement</strong> with others
       <p>
@@ -70,7 +70,7 @@ Template Name: Mission
     }
 
   ?>
-  <section class="mission-section ms-<?php echo $bg ?>">
+  <section class="mission-section s-<?php echo $bg ?>">
     <div class="container">
       <h1>
         <?php
@@ -83,7 +83,11 @@ Template Name: Mission
           echo $section->post_title;
         ?>
       </h1>
-      <?php echo $section->post_content ?>
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+          <?php echo $section->post_content ?>
+        </div>
+      </div>
     </div>
   </section>
   <?php endforeach ?>
