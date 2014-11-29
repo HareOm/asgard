@@ -21,8 +21,6 @@ function roots_main_class() {
   if (roots_display_sidebar()) {
     // Classes on pages with the sidebar
     $class = 'col-sm-8';
-  } elseif( is_single() ) {
-    $class = 'col-md-8 col-md-offset-2';
   } else {
     // Classes on full width pages
     $class = 'col-sm-12';
@@ -60,6 +58,7 @@ function roots_display_sidebar() {
     array(
       'is_404',
       'is_front_page',
+      'is_archive',
       'is_single'
     ),
     /**
@@ -68,6 +67,7 @@ function roots_display_sidebar() {
      */
     array(
       'template-helpout.php',
+      'template-media.php',
       'template-manifesto.php'
     )
   );

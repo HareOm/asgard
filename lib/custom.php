@@ -11,12 +11,12 @@ if( !$post_type ){
 
 ?>
 
-<ul class="nav nav-pills" role="tablist">
-  <li<?php if( $_GET['date'] == 'today') echo ' class="active"'; ?>><a href="<?php echo add_query_arg("date", "today") ?>">Today</a>
-  <li<?php if( $_GET['date'] == 'week') echo ' class="active"'; ?>><a href="<?php echo add_query_arg("date", "week") ?>">This Week</a>
-  <li<?php if( $_GET['date'] == 'month') echo ' class="active"'; ?>><a href="<?php echo add_query_arg("date", "month") ?>">This Month</a>
-  <li<?php if( $_GET['date'] == 'all') echo ' class="active"'; ?>><a href="<?php echo add_query_arg("date", "all") ?>">All Time</a>
-</ul>
+<select class="form-control input-sm" onchange="javascript:location.href = this.value;">
+  <option<?php if( $_GET['date'] == 'today') echo ' selected'; ?> value="<?php echo add_query_arg("date", "today") ?>">Today
+  <option<?php if( $_GET['date'] == 'week') echo ' selected'; ?> value="<?php echo add_query_arg("date", "week") ?>">This Week
+  <option<?php if( $_GET['date'] == 'month') echo ' selected'; ?> value="<?php echo add_query_arg("date", "month") ?>">This Month
+  <option<?php if( $_GET['date'] == 'all') echo ' selected'; ?> value="<?php echo add_query_arg("date", "all") ?>">All Time
+</select>
 
 <?php
 }
@@ -32,32 +32,35 @@ $post_types = get_post_types(array(
 $exclude_post_types = array("attachment", "manifesto", "press_release");
 ?>
 
-<ul class="nav nav-pills" role="tablist">
-<?php foreach($post_types as $pt): ?>
-  <?php if( !in_array($pt, $exclude_post_types) ): ?>
-  <?php
-  if( $pt == "post" ) {
-    $name = "Article";
-  } else {
-    $name = ucfirst($pt);
+<select class="form-control input-sm" onchange="javascript:location.href = this.value;">
+<?php
+  foreach($post_types as $pt) {
+    if( !in_array($pt, $exclude_post_types) ) {
+      if( $pt == "post" ) {
+        $name = "Article";
+      } else {
+        $name = ucfirst($pt);
+      }
+
+      if( is_category() ) {
+        $url = add_query_arg("post_type", $pt);
+      } elseif($pt == "image") {
+        $url = home_url("images");
+      } elseif($pt == "video") {
+        $url = home_url("videos");
+      } else {
+        $url = home_url("articles");
+      }
+
+      echo "<option";
+      if($post_type == $pt) echo ' selected';
+      echo " value=\"$url\">$name";
+
+    }
   }
 
-  if( is_category() ) {
-    $url = add_query_arg("post_type", $pt);
-  } elseif($pt == "image") {
-    $url = home_url("images");
-  } elseif($pt == "video") {
-    $url = home_url("videos");
-  } else {
-    $url = home_url("articles");
-  }
-
-  ?>
-  <li<?php if($post_type == $pt) echo ' class="active"' ?>>
-    <a href="<?php echo $url; ?>"><?php echo $name ?></a>
-  <?php endif ?>
-<?php endforeach; ?>
-</ul>
+?>
+</select>
 <?php
 
 }
@@ -66,12 +69,11 @@ function the_category_filter($post_type) {
 $this_cat_id = get_query_var('cat');
 $categories = get_terms_by_post_type(array("category"), array($post_type));
 ?>
-<ul class="nav nav-pills" role="tablist">
+<select class="form-control input-sm" onchange="javascript:location.href = this.value;">
 <?php foreach($categories as $cat): ?>
-  <li<?php if($this_cat_id == $cat->term_id) echo ' class="active"' ?>>
-    <a href="<?php echo home_url('category/'. $cat->slug . '?post_type=' . $post_type) ?>"><?php echo $cat->name ?></a>
+  <option<?php if($this_cat_id == $cat->term_id) echo ' selected' ?> value="<?php echo home_url('category/'. $cat->slug . '?post_type=' . $post_type) ?>"><?php echo $cat->name ?>
 <?php endforeach; ?>
-</ul>
+</select>
 <?php
 }
 

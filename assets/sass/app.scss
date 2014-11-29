@@ -58,10 +58,20 @@ h1, h2, h3, h4,
   .navbar-nav>li>a {
     font-family: $font-header;
     text-transform: uppercase;
+    color: white;
+
+    &:hover {
+      color: $lime;
+    }
+  }
+  &.navbar-inverse .navbar-nav>.active>a {
+    background: none;
+    color: $lime;
   }
 }
 
 .nav-para {
+  background: rgba(0,0,0,0.5);
   height: $nav-para-height;
   line-height: $nav-para-height;
   text-align: right;
@@ -96,6 +106,10 @@ h1, h2, h3, h4,
 
 /* Gallery Shortcode */
 .gallery-row { padding: 15px 0; }
+
+.entry-header {
+  text-align: center;
+}
 
 .entry-content {
   overflow: hidden; //in case of long strings that cause horizontal scroll in body

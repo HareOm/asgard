@@ -52,7 +52,16 @@ $media_query = new WP_Query( $args );
 
 
 ?>
-<?php get_template_part('templates/page', 'header'); ?>
+<div class="page-header">
+  <div class="pull-right form-inline">
+    <?php the_category_filter($post_type); ?>
+    <?php the_type_filter($post_type) ?>
+    <?php the_date_filter($post_type) ?>
+  </div>
+  <h1>
+    <?php echo roots_title(); ?>
+  </h1>
+</div>
 
 <?php if (!$media_query->have_posts()) : ?>
   <div class="alert alert-warning">
