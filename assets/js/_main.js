@@ -84,11 +84,18 @@ var UTIL = {
 
 $(document).ready(UTIL.loadEvents);
 
+  //Fluid Videos
+  $('.vid-res').fitVids();
+
+  //Tooltips
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip();
+  });
+
+  //Stick FAQ MENU
   $('#nav-faq').waypoint('sticky', {
     offset: 20 // Apply "stuck" when element 30px from top
   });
-
-  $('.vid-res').fitVids();
 
   var lastId,
     topMenu = $('#nav-faq'),
