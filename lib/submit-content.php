@@ -1,75 +1,47 @@
 <?php
-
+//print_r($_POST); die();
 require_once('../../../../wp-load.php');
-$options = get_option( 'hethen_theme_options' );
 
-$postType = $_POST['type'];
-
-// Make sure this came from the real form + site
-if(wp_verify_nonce( $_POST['_wpnonce'], 'submit_' . $postType)){
-
-    // Do some minor form validation to make sure there is content
-    if (isset ($_POST['title'])) {
-
-        $modOption = $postType . 'Moderation';
-        $moderation = $options[$modOption];
-        $status = $moderation ? 'draft' : 'publish';
-
-        // Security precautions
-        $title = cleanText($_POST['title']);
-        $content = cleanHtml($_POST['content']);
-        $excerpt = cleanHtml($_POST['excerpt']);
-        $cat = cleanText($_POST['cat']);
-
-        // Add the content of the form to $post as an array
-        $post = array(
-            'post_title'    => $title,
-            'post_content'  => $content,
-            'post_excerpt'  => $excerpt,
-            'post_category' => array($cat),  // Usable for custom taxonomies too
-            'post_status'   => $status,  // Choose: publish, preview, future, etc.
-            'post_type'     => $postType  // Use a custom post type if you want to
-        );
-        $postID = wp_insert_post($post, true);  // Pass  the value of $post to WordPress the insert
-
-        if($postID){
-
-            // Loop through and update post meta fields
-            foreach($_POST as $key => $value){
-                if(!in_array($key, array('title', 'content', 'cat', 'tag', 'excerpt', 'image')))
-                {
-                    $key = cleanText($key);
-                    add_post_meta($postID, $key, $value, true);
-                }
-            }
-
-            // Loop through submitted images and save the first one as featured image
-            if (isset($_FILES['image']) && $_FILES['image']['size'] > 0) {
-                array_reverse($_FILES);
-                $i = 0;
-                foreach ($_FILES as $file => $array) {
-                    if ($i == 0) $set_feature = 1;
-                    else $set_feature = 0;
-                    $newUpload = insert_attachment($file, $postID, $set_feature);
-                }
-            }
-
-            if(!$moderation){
-                 wp_redirect( '/?p=' . $postID );
-             }else{
-                 wp_redirect('/' . $postType . 's/submit?status=pending');
-             }
-
-        }else{
-
-            wp_redirect('/' . $postType . 's/submit?status=error');
-
-        }
-    }else{
-        wp_redirect('/' . $postType . 's/submit?status=error');
-    }
-
-}else{
-    echo 'Nice try :)';
-    die();
+if ( !isset( $_POST['asgard_image_submit_nonce'] ) || !wp_verify_nonce( $_POST['asgard_image_submit_nonce'], 'asgard_image_submit' ) ) {
+  print 'Sorry, your nonce did not verify.';
+  exit;
 }
+
+// NONCE checks out, continue with the good stuff
+// Create a new post
+$post = array(
+ 'post_status'  => 'draft' ,
+ 'post_title'  => $_POST["title"],
+ 'post_content' => $_POST["description"],
+ 'post_thumbnail' => $_POST["post_thumbnail"],
+ 'post_type'  => 'image'
+);
+
+// insert the post
+$post_id = wp_insert_post( $post );
+
+echo $_POST["post_thumbnail"];
+die();
+
+$filename = $_POST["post_thumbnail"];
+$wp_filetype = wp_check_filetype(basename($filename), null );
+$attachment = array(
+   'post_mime_type' => $wp_filetype['type'],
+   'post_title' => preg_replace('/\.[^.]+$/', '', basename($filename)),
+   'post_content' => '',
+   'post_status' => 'inherit'
+);
+
+$attach_id = wp_insert_attachment( $attachment, $filename, $post_id );
+
+$attach_data = wp_generate_attachment_metadata( $attach_id, $filename );
+wp_update_attachment_metadata( $attach_id, $attach_data );
+
+set_post_thumbnail( $post_id, $attach_id );
+
+// update $_POST['return']
+$_POST['return'] = add_query_arg( array('post_id' => $post_id), $_POST['return'] );
+
+header("Location: " . $_POST['return']);
+// return the new ID
+//echo $post_id;

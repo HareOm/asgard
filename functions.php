@@ -52,14 +52,30 @@ function set_default_meta($post_ID){
 }
 add_action('wp_insert_post','set_default_meta');
 
-// $args = array(
-//   "post_type" => "video",
-//   "posts_per_page" => -1
-// );
-// $the_query = new WP_Query( $args );
-// while ( $the_query->have_posts() ) {
-//   $the_query->the_post();
-//   $video_url = get_post_meta($post->ID, "video_url", true);
-//   $video_url = urldecode($video_url);
-//   update_post_meta($post->ID, "video_url", $video_url);
-// }
+function my_pre_save_post( $post_id )
+{
+    // check if this is to be a new post
+    if( $post_id != 'new' )
+    {
+        return $post_id;
+    }
+
+    // Create a new post
+    $post = array(
+        'post_status'  => 'draft' ,
+        'post_title'  => $_POST["fields"]["field_547b7cd1c1f9b"],
+        'post_content' => $_POST["fields"]["field_547b7cd1c1f9b"],
+        'post_type'  => 'image',
+    );
+
+    // insert the post
+    $post_id = wp_insert_post( $post );
+
+    // update $_POST['return']
+    $_POST['return'] = add_query_arg( array('post_id' => $post_id), $_POST['return'] );
+
+    // return the new ID
+    return $post_id;
+}
+
+add_filter('acf/pre_save_post' , 'my_pre_save_post' );
