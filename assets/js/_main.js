@@ -81,6 +81,11 @@ var UTIL = {
     fjs.parentNode.insertBefore(frag, fjs);
 }(document, 'script'));
 
+$(document).delegate('*[data-toggle="lightbox"]', 'click', function(event) {
+  event.preventDefault();
+  $(this).ekkoLightbox();
+});
+
 //DOCUMENT READY
 $(document).ready(UTIL.loadEvents);
 

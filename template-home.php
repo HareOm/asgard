@@ -13,7 +13,7 @@ Template Name: Home
     </div>
   </div>
   <?php if( get_field("has_video") == 1 ): ?>
-  <a href="<?php the_field("video_url") ?>" class="home-splash-watch">
+  <a href="<?php the_field("video_url") ?>" class="home-splash-watch" data-toggle="lightbox">
     <i class="fa fa-youtube-play"></i>
     <span>Watch Video</span>
   </a>
