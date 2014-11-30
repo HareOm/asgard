@@ -51,3 +51,15 @@ function set_default_meta($post_ID){
     return $post_ID;
 }
 add_action('wp_insert_post','set_default_meta');
+
+// $args = array(
+//   "post_type" => "video",
+//   "posts_per_page" => -1
+// );
+// $the_query = new WP_Query( $args );
+// while ( $the_query->have_posts() ) {
+//   $the_query->the_post();
+//   $video_url = get_post_meta($post->ID, "video_url", true);
+//   $video_url = urldecode($video_url);
+//   update_post_meta($post->ID, "video_url", $video_url);
+// }

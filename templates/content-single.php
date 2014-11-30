@@ -8,11 +8,14 @@
     </div>
     <div class="col-md-8 col-md-offset-2">
       <?php
-      $pf = get_post_format();
-      var_dump($pf);
+        if( get_post_type() == "video" ):
+          $video_url = get_post_meta($post->ID, "video_url", true);
+          $video_url = urldecode($video_url);
+          $video_embed = wp_oembed_get($video_url);
       ?>
-      <?php if( get_post_format() == "video" ): ?>
-        video
+      <div class="vid-res">
+        <?php echo $video_embed; ?>
+      </div>
       <?php endif ?>
       <div class="entry-content">
         <?php the_content(); ?>
