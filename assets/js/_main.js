@@ -138,3 +138,29 @@ $(document).ready(UTIL.loadEvents);
   });
 
 })(jQuery); // Fully reference jQuery after this point.
+
+
+function initialize() {
+  var myLatlng = new google.maps.LatLng(45.400914, -73.376678);
+  var mapOptions = {
+    zoom: 12,
+    center: myLatlng
+  };
+  var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+  var marker = new google.maps.Marker({
+      position: myLatlng,
+      map: map,
+      title: 'Hello World!'
+  });
+}
+
+function loadScript() {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&' +
+      'callback=initialize';
+  document.body.appendChild(script);
+}
+
+window.onload = loadScript;

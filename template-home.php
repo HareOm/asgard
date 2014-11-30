@@ -39,3 +39,6 @@ Template Name: Home
   </p>
 </div>
 </section>
+<section>
+  <div class="home-map" id="map-canvas"></div>
+</section>

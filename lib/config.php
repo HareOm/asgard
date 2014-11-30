@@ -90,3 +90,10 @@ $asgard_full_width_templates = array(
   "template-mission.php",
   "template-home.php"
 );
+
+$valhalla_locations = array(
+  "valhalla-montreal" => "@45.400914,-73.376678,17z",
+  "sirius-massachusetts" => "@42.421172,-72.423914,17z"
+);
+
+$google_maps_api_key = "AIzaSyBTn2OD7x3SdtOr6Qk9lc9RUM0ynMoEd-Y";
