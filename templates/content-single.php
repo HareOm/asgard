@@ -24,6 +24,8 @@
       </div>
       <?php endif ?>
 
+      <?php asgard_share_post() ?>
+
       <?php if( $post->post_content != "" ): ?>
       <div class="entry-content">
         <?php the_content(); ?>

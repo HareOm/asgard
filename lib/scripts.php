@@ -12,7 +12,7 @@
  */
 function roots_scripts() {
   global $google_maps_api_key;
-  wp_enqueue_style('roots_main', get_template_directory_uri() . '/assets/css/main.min.css', false, '72f77ae8a69c63b0bc7ea082aaf114cc');
+  wp_enqueue_style('roots_main', get_template_directory_uri() . '/assets/css/main.min.css', false, '833531224df46071bd8ed1d472028207');
 
   // jQuery is loaded using the same method from HTML5 Boilerplate:
   // Grab Google CDN's latest jQuery with a protocol relative URL; fallback to local if offline
@@ -28,11 +28,12 @@ function roots_scripts() {
   }
 
   wp_register_script('modernizr', get_template_directory_uri() . '/assets/js/vendor/modernizr-2.7.0.min.js', array(), null, false);
-  wp_register_script('roots_scripts', get_template_directory_uri() . '/assets/js/scripts.min.js', array(), 'd88a3e387fb77cf6df9819f431c919f9', true);
+  wp_register_script('roots_scripts', get_template_directory_uri() . '/assets/js/scripts.min.js', array(), '5ff819b201b8191eca3521933e6d2b84', true);
   wp_register_script('jquery-validation', get_template_directory_uri() . '/assets/vendor/jquery-validation/dist/jquery.validate.min.js', array('jquery'), null, true);
   wp_register_script('jquery-waypoints', get_template_directory_uri() . '/assets/vendor/jquery-waypoints/waypoints.min.js', array('jquery'), null, true);
   wp_register_script('jquery-waypoints-sticky', get_template_directory_uri() . '/assets/vendor/jquery-waypoints/shortcuts/sticky-elements/waypoints-sticky.min.js', array('jquery','jquery-waypoints'), null, true);
   wp_register_script('fitvids', get_template_directory_uri() . '/assets/vendor/fitvids/jquery.fitvids.js', array('jquery'), null, true);
+  wp_register_script('RRSSB', get_template_directory_uri() . '/assets/vendor/RRSSB/js/rrssb.min.js', array('jquery'), null, true);
   wp_register_script('gmaps', 'https://maps.googleapis.com/maps/api/js?key=' . $google_maps_api_key, array(), "3.0", false);
   wp_register_script('asgard-helpout', get_template_directory_uri() . '/assets/js/helpout.js', array('jquery'), null, true);
 
@@ -50,6 +51,7 @@ function roots_scripts() {
   wp_enqueue_script('jquery-waypoints');
   wp_enqueue_script('jquery-waypoints-sticky');
   wp_enqueue_script('fitvids');
+  wp_enqueue_script('RRSSB');
   wp_enqueue_script('roots_scripts');
 
 }

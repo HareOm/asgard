@@ -6,10 +6,12 @@
 @import "vars";
 @import "typography";
 
+//THIRD PARTY
 $bootstrap-sass-asset-helper: false;
 @import "bootvars";
 @import "bootstrap/bootstrap";
 @import "../vendor/fontawesome/css/font-awesome.min.css"; //change to sass when deploying
+@import "../vendor/RRSSB/css/rrssb.css"; //change to sass when deploying
 
 @import "modules/faq";
 @import "modules/lists";
@@ -173,6 +175,11 @@ a[rel="next"] {
 }
 a[rel="prev"] {
   left: 3px;
+}
+
+.share-post {
+  background: $light;
+  padding: 4px;
 }
 
 /* ==========================================================================
