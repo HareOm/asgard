@@ -18,7 +18,7 @@ if($status == 'error'){ ?>
 
 <?php } ?>
 
-<?php if ( current_user_can('edit_posts') || true ) { ?>
+<?php if ( current_user_can('edit_posts') ) { ?>
 
 <div class="entry">
     <form enctype="multipart/form-data" action="<?php echo get_template_directory_uri(); ?>/lib/submitContent.php" method="POST" id="image-submit">
@@ -69,7 +69,7 @@ if($status == 'error'){ ?>
 <?php } else { ?>
 
 <div class="alert alert-primary center">
-    <h4>You must be be a <a href="/contribute">contributor</a> in order to post to HE!</h4>
+    <h4>You must be be a <a href="/contribute">contributor</a> in order to post to Valhalla Movement!</h4>
     <p><a href="/contributors">Click here</a> to learn how to earn contributor status or <a href="/signin">sign in</a>.</p>
 </div>
 
