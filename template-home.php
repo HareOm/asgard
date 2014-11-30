@@ -39,6 +39,9 @@ Template Name: Home
   </p>
 </div>
 </section>
-<section>
+<section class="home-network">
+  <h1>The Valhalla Movement's Network</h1>
+  <p class="lead">Valhalla's network of sustainable communities, sister and child organizations, are growing everyday.</p>
+  <p><a href="#" class="btn btn-primary btn-lg">Learn More</a></p>
   <div class="home-map" id="map-canvas"></div>
 </section>

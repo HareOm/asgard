@@ -49,6 +49,12 @@
 }
 
 
+.home-network {
+  @extend .s-dark;
+  overflow: hidden;
+  padding: 20px;
+  text-align: center;
+}
 .home-map {
   min-height: 450px;
 }
