@@ -87,5 +87,6 @@ if (!isset($content_width)) { $content_width = 1140; }
 
 
 $asgard_full_width_templates = array(
-  "template-mission.php"
+  "template-mission.php",
+  "template-home.php"
 );
