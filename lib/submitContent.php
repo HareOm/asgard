@@ -1,9 +1,8 @@
 <?php
 
-require_once('../../../../wp-load.php');
-//$options = get_option( 'hethen_theme_options' );
-
 $postType = $_POST['type'];
+
+require_once('../../../../wp-load.php');
 
 // Make sure this came from the real form + site
 if(wp_verify_nonce( $_POST['_wpnonce'], 'submit_' . $postType)){

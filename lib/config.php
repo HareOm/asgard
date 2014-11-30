@@ -68,7 +68,8 @@ function roots_display_sidebar() {
     array(
       'template-helpout.php',
       'template-media.php',
-      'templates/image-submit.php',
+      'submit-image.php',
+      'submit-video.php',
       'template-mission.php',
       'template-manifesto.php'
     )
