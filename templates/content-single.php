@@ -7,19 +7,29 @@
       </header>
     </div>
     <div class="col-md-8 col-md-offset-2">
+
       <?php
         if( get_post_type() == "video" ):
           $video_url = get_post_meta($post->ID, "video_url", true);
           $video_url = urldecode($video_url);
           $video_embed = wp_oembed_get($video_url);
       ?>
-      <div class="vid-res">
+      <div class="the-video vid-res">
         <?php echo $video_embed; ?>
       </div>
+
+      <?php elseif( has_post_thumbnail() ): ?>
+      <div class="the-image">
+        <?php the_post_thumbnail() ?>
+      </div>
       <?php endif ?>
+
+      <?php if( $post->post_content != "" ): ?>
       <div class="entry-content">
         <?php the_content(); ?>
       </div>
+      <?php endif ?>
+
       <footer>
         <?php wp_link_pages(array('before' => '<nav class="page-nav"><p>' . __('Pages:', 'roots'), 'after' => '</p></nav>')); ?>
       </footer>
