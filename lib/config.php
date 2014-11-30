@@ -68,6 +68,7 @@ function roots_display_sidebar() {
     array(
       'template-helpout.php',
       'template-media.php',
+      'templates/image-submit.php',
       'template-mission.php',
       'template-manifesto.php'
     )
@@ -88,6 +89,7 @@ if (!isset($content_width)) { $content_width = 1140; }
 
 $asgard_full_width_templates = array(
   "template-mission.php",
+//  "templates/image-submit.php",
   "template-home.php"
 );
 

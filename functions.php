@@ -52,30 +52,27 @@ function set_default_meta($post_ID){
 }
 add_action('wp_insert_post','set_default_meta');
 
-function my_pre_save_post( $post_id )
-{
-    // check if this is to be a new post
-    if( $post_id != 'new' )
-    {
-        return $post_id;
-    }
+// For uploading images/featured image from front-end
+function insert_attachment($file_handler,$post_id,$setthumb='false') {
+    // check to make sure its a successful upload
+    if ($_FILES[$file_handler]['error'] !== UPLOAD_ERR_OK) __return_false();
 
-    // Create a new post
-    $post = array(
-        'post_status'  => 'draft' ,
-        'post_title'  => $_POST["fields"]["field_547b7cd1c1f9b"],
-        'post_content' => $_POST["fields"]["field_547b7cd1c1f9b"],
-        'post_type'  => 'image',
-    );
+    require_once(ABSPATH . "wp-admin" . '/includes/image.php');
+    require_once(ABSPATH . "wp-admin" . '/includes/file.php');
+    require_once(ABSPATH . "wp-admin" . '/includes/media.php');
 
-    // insert the post
-    $post_id = wp_insert_post( $post );
+    $attach_id = media_handle_upload( $file_handler, $post_id );
 
-    // update $_POST['return']
-    $_POST['return'] = add_query_arg( array('post_id' => $post_id), $_POST['return'] );
-
-    // return the new ID
-    return $post_id;
+    if ($setthumb) update_post_meta($post_id,'_thumbnail_id',$attach_id);
+    return $attach_id;
 }
 
-add_filter('acf/pre_save_post' , 'my_pre_save_post' );
+// Handy function for cleaning non-html input submissions
+function cleanText($s){
+        return htmlentities(trim(strip_tags(stripslashes($s))), ENT_NOQUOTES, "UTF-8");
+}
+
+// Handy function for cleaning non-html input submissions
+function cleanHtml($s){
+        return trim(stripslashes($s));
+}
