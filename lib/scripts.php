@@ -28,12 +28,11 @@ function roots_scripts() {
   }
 
   wp_register_script('modernizr', get_template_directory_uri() . '/assets/js/vendor/modernizr-2.7.0.min.js', array(), null, false);
-  wp_register_script('roots_scripts', get_template_directory_uri() . '/assets/js/scripts.min.js', array(), 'a609976c019f0c48a1e451ca4cc39053', true);
+  wp_register_script('roots_scripts', get_template_directory_uri() . '/assets/js/scripts.min.js', array(), 'c95fe7894b6020c396881ac71322e056', true);
   wp_register_script('jquery-validation', get_template_directory_uri() . '/assets/vendor/jquery-validation/dist/jquery.validate.min.js', array('jquery'), null, true);
   wp_register_script('jquery-waypoints', get_template_directory_uri() . '/assets/vendor/jquery-waypoints/waypoints.min.js', array('jquery'), null, true);
   wp_register_script('jquery-waypoints-sticky', get_template_directory_uri() . '/assets/vendor/jquery-waypoints/shortcuts/sticky-elements/waypoints-sticky.min.js', array('jquery','jquery-waypoints'), null, true);
-  wp_register_script('bootstrap-js', get_template_directory_uri() . '/assets/vendor/bootstrap/dist/js/bootstrap.min.js', array('jquery'), null, true);
-  wp_register_script('bootstrap-lightbox', get_template_directory_uri() . '/assets/vendor/ekko-lightbox/dist/ekko-lightbox.min.js', array('bootstrap-js'), null, true);
+  wp_register_script('bootstrap-lightbox', get_template_directory_uri() . '/assets/vendor/ekko-lightbox/dist/ekko-lightbox.min.js', array('jquery'), null, true);
   wp_register_script('fitvids', get_template_directory_uri() . '/assets/vendor/fitvids/jquery.fitvids.js', array('jquery'), null, true);
   wp_register_script('RRSSB', get_template_directory_uri() . '/assets/vendor/RRSSB/js/rrssb.min.js', array('jquery'), null, true);
   wp_register_script('gmaps', 'https://maps.googleapis.com/maps/api/js?key=' . $google_maps_api_key, array(), "3.0", false);
@@ -49,7 +48,6 @@ function roots_scripts() {
 
   wp_enqueue_script('modernizr');
   wp_enqueue_script('jquery');
-  wp_enqueue_script('bootstrap-js');
   wp_enqueue_script('bootstrap-lightbox');
   wp_enqueue_script('jquery-validation');
   wp_enqueue_script('jquery-waypoints');
