@@ -52,16 +52,6 @@ $media_query = new WP_Query( $args );
 
 
 ?>
-<div class="page-header">
-  <div class="pull-right form-inline">
-    <?php the_category_filter($post_type); ?>
-    <?php the_type_filter($post_type) ?>
-    <?php the_date_filter($post_type) ?>
-  </div>
-  <h1>
-    <?php echo roots_title(); ?>
-  </h1>
-</div>
 
 <?php if (!$media_query->have_posts()) : ?>
   <div class="alert alert-warning">
@@ -70,9 +60,29 @@ $media_query = new WP_Query( $args );
   <?php get_search_form(); ?>
 <?php endif; ?>
 
-<?php while ($media_query->have_posts()) : $media_query->the_post(); ?>
-  <?php get_template_part('templates/content', get_post_format()); ?>
-<?php endwhile; ?>
+<div class="row">
+  <div class="col-md-4">
+    <div class="media-header">
+      <h1>
+        <?php echo roots_title(); ?>
+      </h1>
+      <div class="form-group">
+        <?php the_category_filter($post_type); ?>
+      </div>
+      <div class="form-group">
+        <?php the_type_filter($post_type) ?>
+      </div>
+      <div class="form-group">
+        <?php the_date_filter($post_type) ?>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-8">
+    <?php while ($media_query->have_posts()) : $media_query->the_post(); ?>
+      <?php get_template_part('templates/content', get_post_format()); ?>
+    <?php endwhile; ?>
+  </div>
+</div>
 
 <?php if ($wp_query->max_num_pages > 1) : ?>
   <nav class="post-nav">
