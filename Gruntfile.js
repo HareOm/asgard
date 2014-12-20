@@ -27,6 +27,9 @@ module.exports = function(grunt) {
           ],
           'css/buddypress.css': [
             'assets/sass/buddypress.scss'
+          ],
+          'assets/css/login.min.css': [
+            'assets/sass/login.scss'
           ]
 
         }

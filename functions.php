@@ -76,3 +76,10 @@ function cleanText($s){
 function cleanHtml($s){
         return trim(stripslashes($s));
 }
+
+
+//CUSTOM LOGIN CSS
+function asgard_login_css() {
+  echo '<link rel="stylesheet" href="'.get_stylesheet_directory_uri() . '/assets/css/login.min.css">';
+}
+add_action('login_head', 'asgard_login_css');
