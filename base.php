@@ -18,7 +18,15 @@
 
   ?>
 
-  <?php if( !in_array(get_page_template_slug(), $asgard_full_width_templates) ): //full width ?>
+  <?php if( bp_current_component() ): ?>
+  <div class="wrap container" role="document">
+    <div class="content">
+      <main class="main main-buddypress" role="main">
+        <?php include roots_template_path(); ?>
+      </main><!-- /.main -->
+    </div><!-- /.content -->
+  </div><!-- /.wrap -->
+  <?php elseif( !in_array(get_page_template_slug(), $asgard_full_width_templates) ): //full width ?>
   <div class="wrap container" role="document">
     <div class="content row">
       <main class="main <?php echo apply_filters('roots/main_class'); ?>" role="main">

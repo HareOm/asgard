@@ -1,3 +1,5 @@
+@import "vars";
+
 /*--------------------------------------------------------------
 Hello, this is the BuddyPress Legacy stylesheet.
 
@@ -56,7 +58,7 @@ Hello, this is the BuddyPress Legacy stylesheet.
     .pagination-links {
     	float: right;
     	margin-right: 10px;
-    	
+
       span,
       a {
       	font-size: 90%;
@@ -65,7 +67,7 @@ Hello, this is the BuddyPress Legacy stylesheet.
       a:hover {
       	font-weight: bold;
       }
-      
+
     }
   }
 
@@ -99,7 +101,7 @@ Hello, this is the BuddyPress Legacy stylesheet.
   .clear {
   	clear: left;
   }
-  
+
 }
 /*--------------------------------------------------------------
 3.0 - BuddyPress
@@ -111,7 +113,7 @@ Hello, this is the BuddyPress Legacy stylesheet.
 
   #activity-stream {
   	margin-top: -5px;
-  
+
     p {
     	margin: 5px 0;
     }
@@ -156,12 +158,12 @@ Hello, this is the BuddyPress Legacy stylesheet.
       select {
       	max-width: 200px;
       	margin-top: 12px;
-      }      
-    }    
+      }
+    }
     #whats-new-submit {
     	float: right;
     	margin-top: 12px;
-    }    
+    }
   }
 
 }
@@ -169,10 +171,10 @@ Hello, this is the BuddyPress Legacy stylesheet.
 body.no-js #buddypress {
   form#whats-new-form textarea {
   	height: 50px;
-  }  
+  }
   #whats-new-options {
   	height: auto;
-  }  
+  }
 }
 
 
@@ -779,15 +781,7 @@ body.activity-permalink #buddypress div.activity-comments div.acomment-content {
 #buddypress div.generic-button a,
 #buddypress .comment-reply-link,
 a.bp-title-button {
-	background: #fff; /* Old browsers */
-	border: 1px solid #ccc;
-	color: #777;
-	font-size: .8rem;
-	cursor: pointer;
-	outline: none;
-	padding: 4px 10px;
-	text-align: center;
-	text-decoration: none;
+
 }
 #buddypress button:hover,
 #buddypress a.button:hover,
@@ -799,11 +793,7 @@ a.bp-title-button {
 #buddypress ul.button-nav li.current a,
 #buddypress div.generic-button a:hover,
 #buddypress .comment-reply-link:hover {
-	background: #ededed;
-	border: 1px solid #bbb;
-	color: #555;
-	outline: none;
-	text-decoration: none;
+
 }
 
 #buddypress form.standard-form .left-menu {
@@ -1671,4 +1661,10 @@ body.register #buddypress div.page ul {
 		float: left;
 		margin: 10px 0 20px;
 	}
+}
+
+#item-body {
+  background: $light;
+  color: $dark;
+  padding: 2em;
 }
