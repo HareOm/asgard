@@ -7,9 +7,20 @@ $article-item-meta: 35px;
   overflow: hidden;
   margin: 10px 0;
   color: $dark;
+  border-radius: $radius;
 
   img {
     float: left;
+  }
+
+  a {
+    display: block;
+    overflow: hidden;
+    &:hover {
+      background: $light;
+      text-decoration: none;
+    }
+
   }
 }
 
@@ -36,6 +47,11 @@ $article-item-meta: 35px;
 
     .vote {
       top: 0;
+
+      a.hethens-voting-vote {
+        width: 100%;
+        padding-top: 8px;
+      }
     }
     a {
       bottom: 0;
@@ -43,18 +59,16 @@ $article-item-meta: 35px;
   }
 
   .article-item-content {
-    display: block;
     height: 100%;
     overflow: hidden;
     padding: $article-item-meta;
     * {
       margin: 0;
     }
-    &:hover {
-      background: $light;
-      text-decoration: none;
+    p {
+      font-size: 0.8em;
     }
   }
   .article-item-title {
-    font-size: 1.2em;
+    font-size: 1.5em;
   }

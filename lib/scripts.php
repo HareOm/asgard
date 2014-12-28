@@ -12,7 +12,7 @@
  */
 function roots_scripts() {
   global $google_maps_api_key;
-  wp_enqueue_style('roots_main', get_template_directory_uri() . '/assets/css/main.min.css', false, 'ca441855eb258711fa4e9accea0b4748');
+  wp_enqueue_style('roots_main', get_template_directory_uri() . '/assets/css/main.min.css', false, '6d5947660b45678f8c7f4db6a0b77c1d');
 
   // jQuery is loaded using the same method from HTML5 Boilerplate:
   // Grab Google CDN's latest jQuery with a protocol relative URL; fallback to local if offline

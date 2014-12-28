@@ -10,6 +10,8 @@ $dark-blue: #272c36;
 $background-color: $dark-blue;
 $text-color: $light;
 
+//RADIUS
+$radius: 4px;
 
 //HEIGHTS
 $nav-para-height: 36px;
@@ -20,5 +22,5 @@ $nav-para-height: 36px;
   background: -moz-linear-gradient(top, #303540 0%, #24272d 100%);
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #303540), color-stop(100%, #24272d));
   background: -webkit-linear-gradient(top, #303540 0%, #24272d 100%);
-  background: linear-gradient(to bottom, #303540 0%, #24272d 100%);  
+  background: linear-gradient(to bottom, #303540 0%, #24272d 100%);
 }
