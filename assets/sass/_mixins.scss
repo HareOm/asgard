@@ -21,3 +21,18 @@
     }
   }
 }
+
+@mixin bp($point) {
+  @if $point == biggie {
+    @media (min-width : 1600px) { @content; }
+  }
+  @if $point == tablet {
+    @media (min-width : 1024px) { @content; }
+  }
+  @else if $point == phone {
+    @media (min-width : 768px) { @content; }
+  }
+  @else {
+    @media (min-width : $point + px) { @content; }
+  }
+}
