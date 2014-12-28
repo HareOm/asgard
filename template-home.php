@@ -50,6 +50,7 @@ Template Name: Home
 function initialize() {
   var myLatlng = new google.maps.LatLng(45.400914, -73.376678);
   var mapOptions = {
+    scrollwheel: false,
     zoom: 12,
     center: myLatlng
   };
