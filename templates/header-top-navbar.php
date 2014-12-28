@@ -20,14 +20,6 @@
         <a class="navbar-brand" href="<?php echo home_url(); ?>/"><?php bloginfo('name'); ?></a>
       </div>
 
-      <div class="navbar-right" role="navigation">
-        <?php
-          if (has_nav_menu('submit_navigation')) :
-            wp_nav_menu(array('theme_location' => 'submit_navigation', 'menu_class' => 'nav navbar-nav'));
-          endif;
-        ?>
-      </div>
-
       <nav class="collapse navbar-collapse navbar-right" role="navigation">
         <?php
           if (has_nav_menu('primary_navigation')) :

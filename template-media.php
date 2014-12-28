@@ -66,6 +66,16 @@ $media_query = new WP_Query( $args );
       <h1>
         <?php echo roots_title(); ?>
       </h1>
+      <?php
+        if( $post_type == "image" ) {
+          $submit_page_id = 5102;
+        } elseif( $post_type == "video" ) {
+          $submit_page_id = 5102;
+        } else {
+          $submit_page_id = 5102;
+        }
+      ?>
+      <p><a href="<?php echo get_permalink($submit_page_id) ?>" class="btn btn-primary btn-lg btn-block">Submit <?php echo $post_type ?></a></p>
       <div class="form-group">
         <?php the_category_filter($post_type); ?>
       </div>
