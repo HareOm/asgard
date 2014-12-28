@@ -1002,9 +1002,14 @@ a.bp-title-button {
 #buddypress table.messages-notices tr td.label,
 #buddypress table.forum tr td.label {
 	border-right: 1px solid #eaeaea;
-	font-weight: bold;
+	font-weight: boldg;
 	width: 25%;
 }
+#buddypress table.profile-fields tr td.label {
+  display: table-cell;
+  background: $blue;
+}
+
 #buddypress table tr td.thread-info p {
 	margin: 0;
 }
@@ -1142,10 +1147,17 @@ a.bp-title-button {
 }
 #buddypress div#item-header {
 	overflow: hidden;
+  text-align: center;
+  margin-top: 3em;
 }
-#buddypress div#item-header div#item-header-content {
-	float: left;
-	margin-left: 0;
+#item-header-content,
+#item-header-avatar {
+	display: inline-block;
+  vertical-align: middle;
+}
+#item-header-content {
+  text-align: left;
+  margin-left: 1em;
 }
 #buddypress div#item-header h2 {
 	line-height: 120%;
@@ -1156,8 +1168,8 @@ a.bp-title-button {
 	text-decoration: none;
 }
 #buddypress div#item-header img.avatar {
-	float: left;
-	margin: 0 15px 19px 0;
+	margin: 0;
+  border-radius: 50%;
 }
 #buddypress div#item-header h2 {
 	margin-bottom: 5px;
@@ -1290,24 +1302,17 @@ body.activity-permalink #buddypress ul.item-list li.activity-item {
 	overflow: hidden;
 }
 
-#buddypress div.item-list-tabs ul {
-	margin: 0;
-	padding: 0;
-}
-#buddypress div.item-list-tabs ul li {
-	float: left;
-	margin: 0;
-	list-style: none;
-}
-#buddypress div.item-list-tabs#subnav ul li {
-	margin-top: 0;
-}
-#buddypress div.item-list-tabs ul li.last {
-	float: right;
-	margin: 7px 0 0;
-}
-#buddypress div.item-list-tabs#subnav ul li.last {
-	margin-top: 4px;
+#buddypress div.item-list-tabs {
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    display: inline-block;
+    margin: 0;
+    margin-right: -4px;
+  }
 }
 #buddypress div.item-list-tabs ul li.last select {
 	max-width: 175px;
@@ -1662,9 +1667,16 @@ body.register #buddypress div.page ul {
 		margin: 10px 0 20px;
 	}
 }
-
+#item-nav {
+  max-width: 800px;
+  margin: auto;
+  margin-top: 2em;
+  text-align: center;
+}
 #item-body {
   background: $light;
   color: $dark;
   padding: 2em;
+  max-width: 800px;
+  margin: auto;
 }
