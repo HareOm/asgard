@@ -53,13 +53,6 @@ $media_query = new WP_Query( $args );
 
 ?>
 
-<?php if (!$media_query->have_posts()) : ?>
-  <div class="alert alert-warning">
-    <?php _e('Sorry, no results were found.', 'roots'); ?>
-  </div>
-  <?php get_search_form(); ?>
-<?php endif; ?>
-
 <div class="row">
   <div class="col-md-4">
     <div class="media-header">
@@ -70,12 +63,12 @@ $media_query = new WP_Query( $args );
         if( $post_type == "image" ) {
           $submit_page_id = 5102;
         } elseif( $post_type == "video" ) {
-          $submit_page_id = 5102;
+          $submit_page_id = 5425;
         } else {
-          $submit_page_id = 5102;
+          $submit_page_id = 5437; //contribute page
         }
       ?>
-      <p><a href="<?php echo get_permalink($submit_page_id) ?>" class="btn btn-primary btn-lg btn-block">Submit <?php echo $post_type ?></a></p>
+      <p><a href="<?php echo get_permalink($submit_page_id) ?>" class="btn btn-primary btn-block"><i class="fa fa-plus-circle"></i> Submit <?php echo ucfirst($post_type) ?></a></p>
       <div class="form-group">
         <?php the_category_filter($post_type); ?>
       </div>
@@ -88,6 +81,12 @@ $media_query = new WP_Query( $args );
     </div>
   </div>
   <div class="col-md-8">
+    <?php if (!$media_query->have_posts()) : ?>
+      <div class="alert alert-warning">
+        <?php _e('Sorry, no results were found.', 'roots'); ?>
+      </div>
+      <?php get_search_form(); ?>
+    <?php endif; ?>
     <?php while ($media_query->have_posts()) : $media_query->the_post(); ?>
       <?php get_template_part('templates/content', get_post_format()); ?>
     <?php endwhile; ?>
