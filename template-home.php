@@ -8,9 +8,7 @@ Template Name: Home
 ?>
 <div class="home-splash" style="background-image:url(<?php echo $image ?>)">
   <div class="home-splash-tagline">
-    <div class="container">
-      <p><?php echo $post->post_content ?></p>
-    </div>
+    <p><?php echo $post->post_content ?></p>
   </div>
   <?php if( get_field("has_video") == 1 ): ?>
   <a href="<?php the_field("video_url") ?>" class="home-splash-watch" data-toggle="lightbox">
