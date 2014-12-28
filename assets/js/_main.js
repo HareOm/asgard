@@ -99,8 +99,17 @@ $(document).ready(UTIL.loadEvents);
   });
 
   //Stick FAQ MENU
+	if ($(window).width() > 768){
+    $('.media-header').waypoint('sticky', {
+      offset: 20
+    });
+    var mediaHeaderWidth = $('.col-md-4').width();
+    $('.media-header').css('width', mediaHeaderWidth);
+  }
+
+  //Stick FAQ MENU
   $('#nav-faq').waypoint('sticky', {
-    offset: 20 // Apply "stuck" when element 30px from top
+    offset: 20 // Apply "stuck" when element 20px from top
   });
 
   var lastId,

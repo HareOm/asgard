@@ -12,7 +12,7 @@
  */
 function roots_scripts() {
   global $google_maps_api_key;
-  wp_enqueue_style('roots_main', get_template_directory_uri() . '/assets/css/main.min.css', false, 'd3fab1a1c49c2c3cd2dcc16dda4b12d2');
+  wp_enqueue_style('roots_main', get_template_directory_uri() . '/assets/css/main.min.css', false, 'dfadbb5eea67271af8e991667d812965');
 
   // jQuery is loaded using the same method from HTML5 Boilerplate:
   // Grab Google CDN's latest jQuery with a protocol relative URL; fallback to local if offline
@@ -28,7 +28,7 @@ function roots_scripts() {
   }
 
   wp_register_script('modernizr', get_template_directory_uri() . '/assets/js/vendor/modernizr-2.7.0.min.js', array(), null, false);
-  wp_register_script('roots_scripts', get_template_directory_uri() . '/assets/js/scripts.min.js', array(), 'c95fe7894b6020c396881ac71322e056', true);
+  wp_register_script('roots_scripts', get_template_directory_uri() . '/assets/js/scripts.min.js', array(), 'f78fe2efe5d182e64bd25fad5c513552', true);
   wp_register_script('jquery-validation', get_template_directory_uri() . '/assets/vendor/jquery-validation/dist/jquery.validate.min.js', array('jquery'), null, true);
   wp_register_script('jquery-waypoints', get_template_directory_uri() . '/assets/vendor/jquery-waypoints/waypoints.min.js', array('jquery'), null, true);
   wp_register_script('jquery-waypoints-sticky', get_template_directory_uri() . '/assets/vendor/jquery-waypoints/shortcuts/sticky-elements/waypoints-sticky.min.js', array('jquery','jquery-waypoints'), null, true);
