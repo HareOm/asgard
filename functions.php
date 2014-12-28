@@ -83,3 +83,9 @@ function asgard_login_css() {
   echo '<link rel="stylesheet" href="'.get_stylesheet_directory_uri() . '/assets/css/login.min.css">';
 }
 add_action('login_head', 'asgard_login_css');
+
+//CUSTOM EXCERPT LENGTH
+function custom_excerpt_length( $length ) {
+	return 20;
+}
+//add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
