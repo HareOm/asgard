@@ -63,3 +63,80 @@
 .home-map {
   min-height: 450px;
 }
+
+
+.home-media {
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    @extend .clearfix;
+    border: 1px solid $dark-blue;
+  }
+
+  li {
+    background: rgba(0,0,0,0.4) no-repeat top center;
+    background-size: cover;
+    overflow: hidden;
+    border: 1px solid $blue;
+
+    @include bp(phone) {
+      float: left;
+      width: 50%;
+      &:last-child {
+        width: 100%;
+      }
+    }
+    @include bp(tablet) {
+      width: 20%;
+      &:last-child {
+        width: 20%;
+      }
+    }
+  }
+
+  .home-media-title {
+    @extend .h5;
+    margin: 0;
+    padding: 4px;
+    letter-spacing: 0.1em;
+    text-align: center;
+    background: $blue;
+  }
+
+  a {
+    display: block;
+    min-height: 200px;
+    background: -moz-linear-gradient(top,  rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.8) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.2)), color-stop(100%,rgba(0,0,0,0.8)));
+    background: -webkit-linear-gradient(top,  rgba(0,0,0,0.2) 0%,rgba(0,0,0,0.8) 100%);
+    background: -o-linear-gradient(top,  rgba(0,0,0,0.2) 0%,rgba(0,0,0,0.8) 100%);
+    background: -ms-linear-gradient(top,  rgba(0,0,0,0.2) 0%,rgba(0,0,0,0.8) 100%);
+    background: linear-gradient(to bottom,  rgba(0,0,0,0.2) 0%,rgba(0,0,0,0.8) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#33000000', endColorstr='#cc000000',GradientType=0 );
+    padding: 20px;
+    color: #fff;
+    position: relative;
+
+    span {
+      position: absolute;
+      padding: 0 20px;
+      bottom: 20px;
+      opacity: 1;
+      font-size: 1.6em;
+      line-height: 1.3;
+      font-weight: 300;
+      text-shadow: 0 0 2px black;
+    }
+
+    &:hover {
+      background: none;
+      span {
+        opacity: 0;
+      }
+    }
+
+  }
+
+}

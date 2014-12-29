@@ -37,6 +37,95 @@ Template Name: Home
   </p>
 </div>
 </section>
+<section class="home-media">
+  <ul>
+    <?php $ft_post = get_field("featured_post") ?>
+    <?php
+    if( $ft_post ) {
+      $post = $ft_post;
+    } else {
+      $post = get_posts(
+        array(
+          'posts_per_page'   => 1,
+          'meta_key'         => '_thumbnail_id',
+          'post_type'        => 'post',
+          'post_status'      => 'publish' )
+      );
+      $post = array_shift($post);
+    }
+    $post_image = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'medium' );
+    $post_image_src = $post_image[0];
+    $ft_post_id = $post->ID;
+    ?>
+    <li style="background-image: url(<?php echo $post_image_src ?>)">
+      <h2 class="home-media-title">Featured</h2>
+      <a href="<?php echo get_permalink($post->ID) ?>">
+        <span><?php echo get_the_title($post->ID) ?></span>
+      </a>
+    </li>
+    <?php
+      $post = get_posts(
+        array(
+          'posts_per_page'   => 1,
+          'meta_key'         => '_thumbnail_id',
+          'post_type'        => 'video',
+          'post_status'      => 'publish' )
+      );
+      $post = array_shift($post);
+      $post_image = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'medium' );
+      $post_image_src = $post_image[0];
+    ?>
+    <li style="background-image: url(<?php echo $post_image_src ?>)">
+      <h2 class="home-media-title">Video</h2>
+      <a href="<?php echo get_permalink($post->ID) ?>">
+        <span><?php echo get_the_title($post->ID) ?></span>
+      </a>
+    </li>
+    <?php
+      $post = get_posts(
+        array(
+          'posts_per_page'   => 1,
+          'meta_key'         => '_thumbnail_id',
+          'post_type'        => 'image',
+          'post_status'      => 'publish' )
+      );
+      $post = array_shift($post);
+      $post_image = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'medium' );
+      $post_image_src = $post_image[0];
+    ?>
+    <li style="background-image: url(<?php echo $post_image_src ?>)">
+      <h2 class="home-media-title">Image</h2>
+      <a href="<?php echo get_permalink($post->ID) ?>">
+        <span><?php echo get_the_title($post->ID) ?></span>
+      </a>
+    </li>
+    <?php
+      $post = get_posts(
+        array(
+          'posts_per_page'   => 1,
+          'meta_key'         => '_thumbnail_id',
+          'post_type'        => 'post',
+          'exclude'          => array($ft_post_id),
+          'post_status'      => 'publish' )
+      );
+      $post = array_shift($post);
+      $post_image = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'medium' );
+      $post_image_src = $post_image[0];
+    ?>
+    <li style="background-image: url(<?php echo $post_image_src ?>)">
+      <h2 class="home-media-title">Article</h2>
+      <a href="<?php echo get_permalink($post->ID) ?>">
+        <span><?php echo get_the_title($post->ID) ?></span>
+      </a>
+    </li>
+    <li>
+      <h2 class="home-media-title">More</h2>
+      <a href="#">
+        <span>Read More</span>
+      </a>
+    </li>
+  </ul>
+</section>
 <section class="home-network">
   <h1>The Valhalla Movement's Network</h1>
   <p class="lead">Valhalla's network of sustainable communities, sister and child organizations, are growing everyday.</p>
