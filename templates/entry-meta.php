@@ -3,9 +3,7 @@
 
 <?php
 $categories = get_the_terms( $post->ID, 'category' );
-$categories_array = array();
 foreach($categories as $cat){
-  $categories_array[] = '<a href="'. home_url('category/'. $cat->slug . '?post_type=' . get_post_type()) .'">' . $cat->name . '</a>';
+  echo '<a class="label label-primary" href="'. home_url('category/'. $cat->slug . '?post_type=' . get_post_type()) .'">' . $cat->name . '</a> ';
 }
-if( count($categories_array) > 0 ) echo implode($categories_array, ', ');
 ?>
