@@ -71,6 +71,7 @@ function roots_display_sidebar() {
       'submit-image.php',
       'submit-video.php',
       'template-team.php',
+      'template-network.php',
       'template-mission.php',
       'template-manifesto.php'
     )
