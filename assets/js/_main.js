@@ -98,7 +98,7 @@ $(document).ready(UTIL.loadEvents);
     $('[data-toggle="tooltip"]').tooltip();
   });
 
-  //Stick FAQ MENU
+  //Stick MEDIA HEADER sidebar
 	if ($(window).width() > 768){
     $('.media-header').waypoint('sticky', {
       offset: 20
@@ -106,6 +106,14 @@ $(document).ready(UTIL.loadEvents);
     var mediaHeaderWidth = $('.col-md-4').width();
     $('.media-header').css('width', mediaHeaderWidth);
   }
+
+  //Stick Share Post
+  $('.share-post').waypoint('sticky', {
+    offset: 0
+  });
+  var sharePostWidth = $('.entry-content').outerWidth();
+  $('.share-post').css('width', sharePostWidth);
+
 
   //Stick FAQ MENU
   $('#nav-faq').waypoint('sticky', {

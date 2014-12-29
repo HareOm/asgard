@@ -78,6 +78,7 @@ $media_query = new WP_Query( $args );
       <div class="form-group">
         <?php the_date_filter($post_type) ?>
       </div>
+      <?php dynamic_sidebar('sidebar-media'); ?>
     </div>
   </div>
   <div class="col-md-8">

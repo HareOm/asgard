@@ -187,7 +187,9 @@ a[rel="prev"] {
 
 .share-post {
   background: $light;
-  padding: 4px;
+  position: relative;
+  z-index: 2;
+  padding: 4px 0;
 }
 
 
