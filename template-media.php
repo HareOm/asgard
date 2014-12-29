@@ -59,6 +59,7 @@ $media_query = new WP_Query( $args );
       <h1>
         <?php echo roots_title(); ?>
       </h1>
+      <?php dynamic_sidebar('sidebar-media'); ?>
       <?php
         if( $post_type == "image" ) {
           $submit_page_id = 5102;
@@ -69,6 +70,8 @@ $media_query = new WP_Query( $args );
         }
       ?>
       <p><a href="<?php echo get_permalink($submit_page_id) ?>" class="btn btn-primary btn-block"><i class="fa fa-plus-circle"></i> Submit <?php echo ucfirst($post_type) ?></a></p>
+      <hr>
+      <h2 class="h4">Filter</h2>
       <div class="form-group">
         <?php the_category_filter($post_type); ?>
       </div>
@@ -78,7 +81,6 @@ $media_query = new WP_Query( $args );
       <div class="form-group">
         <?php the_date_filter($post_type) ?>
       </div>
-      <?php dynamic_sidebar('sidebar-media'); ?>
     </div>
   </div>
   <div class="col-md-8">
