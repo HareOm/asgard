@@ -32,7 +32,11 @@
       </div>
       <?php endif ?>
 
-      <footer>
+      <footer class="clearfix">
+        <?php previous_post_link('%link', '<span data-toggle="tooltip" data-placement="top" title="%title"><i class="fa fa-angle-left"><span class="sr-only">Previous</span></i></span>') ?>
+
+        <?php next_post_link('%link', '<span data-toggle="tooltip" data-placement="top" title="%title"><i class="fa fa-angle-right"><span class="sr-only">Next</span></i></span>') ?>
+
         <?php wp_link_pages(array('before' => '<nav class="page-nav"><p>' . __('Pages:', 'roots'), 'after' => '</p></nav>')); ?>
       </footer>
       <?php comments_template('/templates/comments.php'); ?>

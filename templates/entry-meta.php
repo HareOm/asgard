@@ -3,7 +3,11 @@
 
 <?php
 $categories = get_the_terms( $post->ID, 'category' );
-foreach($categories as $cat){
-  echo '<a class="label label-primary" href="'. home_url('category/'. $cat->slug . '?post_type=' . get_post_type()) .'">' . $cat->name . '</a> ';
+if( count($categories) > 0 ) {
+  echo '<p>';
+  foreach($categories as $cat){
+    echo '<a class="label label-primary" href="'. home_url('category/'. $cat->slug . '?post_type=' . get_post_type()) .'">' . $cat->name . '</a> ';
+  }
+  echo '</p>';
 }
 ?>

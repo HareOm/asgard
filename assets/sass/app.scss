@@ -172,18 +172,32 @@ h1, h2, h3, h4,
 
 a[rel="next"],
 a[rel="prev"] {
-  font-size: 4em;
-  position: fixed;
-  display: block;
-  width: 100px;
-  text-align: center;
-  top: 40%;
+  font-size: 2em;
+  display: inline-block;
 }
 a[rel="next"] {
-  right: 3px;
+  float: right;
 }
 a[rel="prev"] {
-  left: 3px;
+  float: left;
+}
+@include bp(phone) {
+  a[rel="next"],
+  a[rel="prev"] {
+    font-size: 4em;
+    position: fixed;
+    display: block;
+    width: 100px;
+    text-align: center;
+    top: 40%;
+    float: none;
+  }
+  a[rel="next"] {
+    right: 3px;
+  }
+  a[rel="prev"] {
+    left: 3px;
+  }
 }
 
 .share-post {
