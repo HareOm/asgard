@@ -27,14 +27,8 @@
 
    foreach( $team_members as $member ):
   ?>
-  <div class="media">
-    <a class="media-left pull-left" href="#">
-      <?php echo get_avatar( $member->ID, 150 ); ?>
-    </a>
-    <div class="media-body">
-      <h4 class="media-heading"><?php echo $member->display_name ?></h4>
-      <p><?php the_author_meta('user_description', $member->ID) ?></p>
-    </div>
-  </div>
+  <a href="<?php echo bp_core_get_user_domain($member->ID) ?>">
+    <?php echo get_avatar( $member->ID, 250 ); ?>
+  </a>
   <?php endforeach; ?>
 </div>

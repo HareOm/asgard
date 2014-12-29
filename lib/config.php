@@ -70,6 +70,7 @@ function roots_display_sidebar() {
       'template-media.php',
       'submit-image.php',
       'submit-video.php',
+      'template-team.php',
       'template-mission.php',
       'template-manifesto.php'
     )
