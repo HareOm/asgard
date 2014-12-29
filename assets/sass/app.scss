@@ -27,8 +27,12 @@ $bootstrap-sass-asset-helper: false;
    Base
    ========================================================================== */
 
+html {
+  background: $background-color url(../img/body-bg.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
 body {
-  background-color: $background-color;
+  background: none;
   color: $text-color;
   font-family: $sans-serif;
 }
