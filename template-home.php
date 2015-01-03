@@ -134,29 +134,35 @@ Template Name: Home
 </section>
 <script>
 //GMAPS
-function initialize() {
-  var myLatlng = new google.maps.LatLng(45.400914, -73.376678);
-  var mapOptions = {
-    scrollwheel: false,
-    zoom: 12,
-    center: myLatlng
-  };
-  var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
-  var marker = new google.maps.Marker({
-      position: myLatlng,
-      map: map,
-      title: 'Hello World!'
-  });
-}
+   var locations = [
+      ['Valhalla Montreal', 45.400914, -73.376678, 3],
+      ['Sirius Community', 42.421172,-72.423914, 3],
+      ['Valhalla Arizona', 34.1682185,-111.930907, 3]
+    ];
 
-function loadScript() {
-  var script = document.createElement('script');
-  script.type = 'text/javascript';
-  script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&' +
-      'callback=initialize';
-  document.body.appendChild(script);
-}
+   var map = new google.maps.Map(document.getElementById('map-canvas'), {
+      zoom: 4,
+      center: new google.maps.LatLng(45.400914, -73.376678),
+      scrollwheel: false,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
 
-window.onload = loadScript;
+    var infowindow = new google.maps.InfoWindow();
+
+    var marker, i;
+
+    for (i = 0; i < locations.length; i++) {
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        map: map
+      });
+
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+          infowindow.setContent(locations[i][0]);
+          infowindow.open(map, marker);
+        }
+      })(marker, i));
+    }
 </script>
