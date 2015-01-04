@@ -25,6 +25,8 @@ if( $date == "week" ) {
   $date_query = array();
 }
 
+$paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
+
 $args = array(
   'post_type'      => $post_type,
 	'post_status'    => 'publish',
@@ -32,32 +34,53 @@ $args = array(
 	'order'          => 'DESC',
   'cat'            => $category,
 	'date_query'     => array($date_query),
+  'paged'          => $paged
 );
-$the_query = new WP_Query( $args );
+$media_query = new WP_Query( $args );
 
 ?>
-<div class="page-header">
-  <div class="pull-right form-inline">
-    <?php the_category_filter($post_type); ?>
-    <?php the_type_filter($post_type) ?>
-    <?php the_date_filter($post_type) ?>
+<div class="row">
+  <div class="col-md-4">
+    <div class="media-header">
+      <h1>
+        <?php echo roots_title(); ?>
+      </h1>
+      <?php dynamic_sidebar('sidebar-media'); ?>
+      <?php
+        if( $post_type == "image" ) {
+          $submit_page_id = 5102;
+        } elseif( $post_type == "video" ) {
+          $submit_page_id = 5425;
+        } else {
+          $submit_page_id = 5437; //contribute page
+        }
+      ?>
+      <p><a href="<?php echo get_permalink($submit_page_id) ?>" class="btn btn-primary btn-block"><i class="fa fa-plus-circle"></i> Contribute</a></p>
+      <hr>
+      <h2 class="h4">Filter</h2>
+      <div class="form-group">
+        <?php the_category_filter(); ?>
+      </div>
+      <div class="form-group">
+        <?php the_type_filter() ?>
+      </div>
+      <div class="form-group">
+        <?php the_date_filter() ?>
+      </div>
+    </div>
   </div>
-  <h1>
-    <?php echo roots_title(); ?>
-  </h1>
+  <div class="col-md-8">
+    <?php if (!$media_query->have_posts()) : ?>
+      <div class="alert alert-warning">
+        <?php _e('Sorry, no results were found.', 'roots'); ?>
+      </div>
+      <?php get_search_form(); ?>
+    <?php endif; ?>
+    <?php while ($media_query->have_posts()) : $media_query->the_post(); ?>
+      <?php get_template_part('templates/content', get_post_format()); ?>
+    <?php endwhile; ?>
+  </div>
 </div>
-
-
-<?php if (!$the_query->have_posts()) : ?>
-  <div class="alert alert-warning">
-    <?php _e('Sorry, no results were found.', 'roots'); ?>
-  </div>
-  <?php get_search_form(); ?>
-<?php endif; ?>
-
-<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
-  <?php get_template_part('templates/content', get_post_format()); ?>
-<?php endwhile; ?>
 
 <?php if ($wp_query->max_num_pages > 1) : ?>
   <nav class="post-nav">

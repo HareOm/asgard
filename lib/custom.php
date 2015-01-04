@@ -65,11 +65,19 @@ $exclude_post_types = array("attachment", "manifesto", "press_release");
 
 }
 
-function the_category_filter($post_type) {
+function the_category_filter($post_type = NULL) {
 $this_cat_id = get_query_var('cat');
-$categories = get_terms_by_post_type(array("category"), array($post_type));
+
+if( $post_type ) {
+  $categories = get_terms_by_post_type(array("category"), array($post_type));
+} else {
+  $categories = get_terms('category');
+}
 ?>
 <select class="form-control input-sm" onchange="javascript:location.href = this.value;">
+<?php if(!$this_cat_id): ?>
+<option>Choose a Category</option>
+<?php endif; ?>
 <?php foreach($categories as $cat): ?>
   <option<?php if($this_cat_id == $cat->term_id) echo ' selected' ?> value="<?php echo home_url('category/'. $cat->slug . '?post_type=' . $post_type) ?>"><?php echo $cat->name ?>
 <?php endforeach; ?>
