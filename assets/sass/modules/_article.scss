@@ -32,6 +32,7 @@ $article-item-meta: 35px;
     height: 100%;
     width: $article-item-meta;
     background: $light;
+    border-right: 3px solid $blue;
 
     .vote,
     a {
@@ -46,11 +47,14 @@ $article-item-meta: 35px;
     }
 
     .vote {
-      top: 0;
-
       a.hethens-voting-vote {
+        position: relative;
         width: 100%;
         padding-top: 8px;
+      }
+      span.hethens-voting-vote-counter {
+        top: -16px;
+        position: relative;
       }
     }
     a {
