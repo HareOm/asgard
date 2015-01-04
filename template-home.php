@@ -119,7 +119,7 @@ Template Name: Home
       </a>
     </li>
     <li>
-      <a href="#">
+      <a href="<?php echo home_url('index.php?page_id=' . get_option('page_for_posts')) ?>">
         <span>Read More</span>
       </a>
     </li>

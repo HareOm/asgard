@@ -84,6 +84,7 @@ $media_query = new WP_Query( $args );
     </div>
   </div>
   <div class="col-md-8">
+    <div style="padding:30px 0">
     <?php if (!$media_query->have_posts()) : ?>
       <div class="alert alert-warning">
         <?php _e('Sorry, no results were found.', 'roots'); ?>
@@ -93,6 +94,7 @@ $media_query = new WP_Query( $args );
     <?php while ($media_query->have_posts()) : $media_query->the_post(); ?>
       <?php get_template_part('templates/content', get_post_format()); ?>
     <?php endwhile; ?>
+    </div>
   </div>
 </div>
 
