@@ -89,3 +89,19 @@ function custom_excerpt_length( $length ) {
 	return 20;
 }
 //add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+
+
+add_action( 'after_setup_theme', 'asgard_rss_template' );
+/**
+ * Register custom RSS template.
+ */
+function asgard_rss_template() {
+	add_feed( 'weeklyDigest', 'asgard_rss_render' );
+}
+
+/**
+ * Custom RSS template callback.
+ */
+function asgard_rss_render() {
+	get_template_part( 'feed', 'weeklyDigest' );
+}
