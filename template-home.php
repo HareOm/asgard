@@ -58,8 +58,8 @@ Template Name: Home
     $ft_post_id = $post->ID;
     ?>
     <li style="background-image: url(<?php echo $post_image_src ?>)">
-      <h2 class="home-media-title">Featured</h2>
       <a href="<?php echo get_permalink($post->ID) ?>">
+        <i class="fa fa-star"></i>
         <span><?php echo get_the_title($post->ID) ?></span>
       </a>
     </li>
@@ -76,8 +76,8 @@ Template Name: Home
       $post_image_src = $post_image[0];
     ?>
     <li style="background-image: url(<?php echo $post_image_src ?>)">
-      <h2 class="home-media-title">Video</h2>
       <a href="<?php echo get_permalink($post->ID) ?>">
+        <i class="fa fa-film"></i>
         <span><?php echo get_the_title($post->ID) ?></span>
       </a>
     </li>
@@ -90,12 +90,12 @@ Template Name: Home
           'post_status'      => 'publish' )
       );
       $post = array_shift($post);
-      $post_image = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'medium' );
+      $post_image = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large' );
       $post_image_src = $post_image[0];
     ?>
     <li style="background-image: url(<?php echo $post_image_src ?>)">
-      <h2 class="home-media-title">Image</h2>
       <a href="<?php echo get_permalink($post->ID) ?>">
+        <i class="fa fa-image"></i>
         <span><?php echo get_the_title($post->ID) ?></span>
       </a>
     </li>
@@ -113,13 +113,12 @@ Template Name: Home
       $post_image_src = $post_image[0];
     ?>
     <li style="background-image: url(<?php echo $post_image_src ?>)">
-      <h2 class="home-media-title">Article</h2>
       <a href="<?php echo get_permalink($post->ID) ?>">
+        <i class="fa fa-newspaper-o"></i>
         <span><?php echo get_the_title($post->ID) ?></span>
       </a>
     </li>
     <li>
-      <h2 class="home-media-title">More</h2>
       <a href="#">
         <span>Read More</span>
       </a>
