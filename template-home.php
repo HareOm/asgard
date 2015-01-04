@@ -53,7 +53,7 @@ Template Name: Home
       );
       $post = array_shift($post);
     }
-    $post_image = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'medium' );
+    $post_image = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large' );
     $post_image_src = $post_image[0];
     $ft_post_id = $post->ID;
     ?>
@@ -90,7 +90,7 @@ Template Name: Home
           'post_status'      => 'publish' )
       );
       $post = array_shift($post);
-      $post_image = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large' );
+      $post_image = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'medium' );
       $post_image_src = $post_image[0];
     ?>
     <li style="background-image: url(<?php echo $post_image_src ?>)">
