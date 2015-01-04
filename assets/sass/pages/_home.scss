@@ -38,6 +38,10 @@
       text-transform: uppercase;
       font-weight: 900;
     }
+    &:hover {
+      text-decoration: none;
+      color: $light;
+    }
   }
 
 .home-signup {

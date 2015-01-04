@@ -77,7 +77,7 @@ Template Name: Home
     ?>
     <li style="background-image: url(<?php echo $post_image_src ?>)">
       <a href="<?php echo get_permalink($post->ID) ?>">
-        <i class="fa fa-film"></i>
+        <i class="fa fa-video-camera"></i>
         <span><?php echo get_the_title($post->ID) ?></span>
       </a>
     </li>
@@ -114,7 +114,7 @@ Template Name: Home
     ?>
     <li style="background-image: url(<?php echo $post_image_src ?>)">
       <a href="<?php echo get_permalink($post->ID) ?>">
-        <i class="fa fa-newspaper-o"></i>
+        <i class="fa fa-file-text"></i>
         <span><?php echo get_the_title($post->ID) ?></span>
       </a>
     </li>
@@ -128,7 +128,7 @@ Template Name: Home
 <section class="home-network">
   <h1>The Valhalla Movement's Network</h1>
   <p class="lead">Valhalla's network of sustainable communities, sister and child organizations, are growing everyday.</p>
-  <p><a href="#" class="btn btn-primary btn-lg">Learn More</a></p>
+  <p style="margin-bottom:30px"><a href="<?php echo home_url('index.php?page_id=5097') ?>" class="btn btn-primary btn-lg">Learn More</a></p>
   <div class="home-map" id="map-canvas"></div>
 </section>
 <script>
