@@ -9,6 +9,7 @@ $dark-blue: #272c36;
 
 $background-color: $dark-blue;
 $text-color: $light;
+$text-dark: lighten($dark-blue, 20%);
 
 //RADIUS
 $radius: 4px;

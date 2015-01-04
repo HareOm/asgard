@@ -13,6 +13,7 @@ $bootstrap-sass-asset-helper: false;
 @import "bootstrap/bootstrap";
 @import "../vendor/fontawesome/css/font-awesome.min.css"; //change to sass when deploying
 @import "../vendor/RRSSB/css/rrssb.css"; //change to sass when deploying
+@import "bootmods";
 
 @import "modules/faq";
 @import "modules/lists";
@@ -152,7 +153,7 @@ h1, h2, h3, h4,
 
 .entry-header {
   text-align: center;
-  margin-bottom: 1em;
+  margin: 3em;
 }
 
 .entry-content {

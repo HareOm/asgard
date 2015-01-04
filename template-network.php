@@ -10,13 +10,57 @@
     <h1><?php the_title() ?></h1>
   </div>
   <div class="row">
-    <div class="col-md-4">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </div>
-    <div class="col-md-8">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </div>
+    <section class="col-md-3">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h1 class="panel-title">Valhalla Communities</h1>
+        </div>
+        <div class="panel-body">
+          <div style="min-height:140px">
+          <p>In addition to Valhalla's media channel, we have established and encourage actual on-the-ground communities, the first of which marked the beginning of <a href="//montreal.valhallamovement.com">Valhalla in Montreal</a>.</p>
+          </div>
+          <div><a href="javascript:alert('Coming soon.');" class="btn btn-primary btn-block">Explore Communities</a></div>
+        </div>
+      </div>
+    </section>
+    <section class="col-md-3">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h1 class="panel-title">Valhalla Agency</h1>
+        </div>
+        <div class="panel-body">
+          <div style="min-height:140px">
+          <p>Changemakers for hire: We connect talent to social causes to empower them on the path to changing the world.</p>
+          </div>
+          <div><a href="//agency.valhallamovement.com" class="btn btn-primary btn-block">Work with Us</a></div>
+        </div>
+      </div>
+    </section>
+    <section class="col-md-3">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h1 class="panel-title">Greenseed</h1>
+        </div>
+        <div class="panel-body">
+          <div style="min-height:140px">
+          <p>A crowdsourcing platform dedicated to Social Causes & Sustainable initiatives.</p>
+          </div>
+          <div><a href="//greenseed.me" class="btn btn-primary btn-block">Crowdsource</a></div>
+        </div>
+      </div>
+    </section>
+    <section class="col-md-3">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h1 class="panel-title">Superhero Academy</h1>
+        </div>
+        <div class="panel-body">
+          <div style="min-height:140px">
+          <p>Superhero Academy is dedicated to encouraging and supporting everyday superheroes.</p>
+          </div>
+          <div><a href="//superheroacademy.net" class="btn btn-primary btn-block">Become a Superhero</a></div>
+        </div>
+      </div>
+    </section>
   </div>
 </div>
