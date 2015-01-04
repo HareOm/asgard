@@ -94,6 +94,8 @@ MISSION
 .ms-core {
   list-style: none;
   text-align: center;
+  padding: 0;
+  margin-bottom: 30px;
 }
 
 .ms-core li {
@@ -126,7 +128,7 @@ MISSION
   background-image: -o-linear-gradient(top, #f7f7f7, #e7e7e7);
   color: #24272d;
   text-shadow: 0 1px white;
-  margin: 42px;
+  margin: 0 30px;
   width: 144px;
   height: 144px;
   position: relative;
@@ -167,20 +169,21 @@ MISSION
   background: #f5f5f5;
 }
 .ms-core a:hover h2,
-.ms-core a:hover .icon {
+.ms-core a:hover i {
   color: #3f6a8b;
 }
 
 .ms-core h2 {
   color: #24272d;
-  margin-top: -50px;
-  font-size: 1em;
-  font-family: "Archive", "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin-top: -40px;
+  font-size: 0.9em;
+  letter-spacing: -0.05em;
+  font-family: $font-header;
   line-height: 1.2;
   font-weight: 400;
 }
-.ms-core .icon {
-  font-size: 6em;
+.ms-core i {
+  font-size: 3em;
   color: #24272d;
 }
 

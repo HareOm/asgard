@@ -5,12 +5,12 @@ Template Name: Mission
 ?>
 
 <article id="post-<?php the_ID(); ?>">
-
-  <div class="mission-section">
+  <div class="entry-header">
+    <h1><?php the_title() ?></h1>
+  </div>
+  <div class="mission-section" style="padding-top:0">
     <div class="container">
-      <header class="ms-header">
-        <?php the_content() ?>
-      </header>
+      <?php the_content() ?>
       <div class="ms-freedomculture">
         <div class="ms-fc-vid">
           <div class="vid-res"><?php
@@ -24,7 +24,7 @@ Template Name: Mission
           <p>Through ecologically sustainable lifestyles, economic self-reliance in local communities, and global collaborative action for the benefit of all, freedom culture can become the new normal.
         </div>
       </div>
-      <p class="ms-liaison"><a href="#ms-cta">Here's how <i class="fa fa-arrow-circle-right"></i></a>
+      <p class="text-center" style="margin-top:80px;"><a href="#ms-cta" class="btn btn-primary btn-lg">Here's how <i class="fa fa-arrow-circle-down"></i></a>
     </div>
   </div>
   <section id="ms-cta" class="mission-section s-lime">
