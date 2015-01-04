@@ -5,6 +5,10 @@
         echo get_the_voting_html(false);
     } ?>
     </div>
+    <a href="<?php the_permalink(); ?>#comments" class="article-item-meta-comments">
+      <i class="fa fa-comment-o"></i>
+      <?php if( get_comments_number() > 0 ) echo get_comments_number(); ?>
+    </a>
     <a href="<?php the_permalink(); ?>" class="article-item-meta-link"><i class="fa fa-link"></i></a>
   </div>
   <a href="<?php the_permalink(); ?>">

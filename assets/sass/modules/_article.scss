@@ -57,9 +57,12 @@ $article-item-meta: 35px;
         position: relative;
       }
     }
-    a {
-      bottom: 0;
-    }
+  }
+  .article-item-meta-link {
+    bottom: 0;
+  }
+  .article-item-meta-comments {
+    bottom: 35px;
   }
 
   .article-item-content {
