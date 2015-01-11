@@ -18,7 +18,6 @@
 - Highlight authors more, link to profile change
 - Comment add count
 - Marc will send fields for contributor form
-- Sharing put 5: Facebook, StumbleUpon, Reddit, Google+, Twitter
 - Categories: Contribute -> submit
 - Spruce up profile page
 
