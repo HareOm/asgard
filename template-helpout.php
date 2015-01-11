@@ -16,8 +16,6 @@
       <li>Follow
       <li>Spread the Word
       <li>Use Our Media
-      <li>Crowdspeak
-      <li>Crowdsourcing
       <li>Donate
       <li class="nav next"><i class="fa fa-chevron-right"></i>
     </ul>
@@ -49,13 +47,13 @@
         </div>
       </div>
       <div class="m-helpout-follow-video">
-        <h2><i class="fa fa-film"></i> Video <a href="http://www.youtube.com/subscription_center?add_user=TheValhallaMovement"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/youtube_subscribe.png" width="109" height="130" alt="Youtube Subscribe"></a></h2>
+        <h2><i class="fa fa-film"></i> Video <a href="http://www.youtube.com/subscription_center?add_user=TheValhallaMovement"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/youtube_subscribe.png" width="109" alt="Youtube Subscribe"></a></h2>
         <p class="small-text">Valhalla is constantly working at creating high quality content to keep you up to date with your progress, expose you to new ways of thinking, and entertain you while remaining informative.
         <p><a href="http://www.youtube.com/user/TheValhallaMovement" target="_blank" class="m-helpout-btn m-helpout-btn-block"><i class="fa fa-youtube">Youtube</i> Channel</a>
 
         <h3>Podcasts</h3>
         <p class="small-text">Rate Comment & Subscribe to Valhalla's Superhero Academy Podcast
-        <p><a href="https://itunes.apple.com/ca/podcast/valhallas-superhero-academy/id888603342?mt=2&uo=4" class="m-helpout-btn m-helpout-btn-block"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/itunes.png" width="103" height="40" alt="Itunes"></a>
+        <p><a href="https://itunes.apple.com/ca/podcast/valhallas-superhero-academy/id888603342?mt=2&uo=4" class="m-helpout-btn m-helpout-btn-block"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/itunes.png" height="40" alt="Itunes"></a>
       </div>
     </div>
 
@@ -81,36 +79,6 @@
     <div class="m-helpout-media">
       <a href="<?php echo home_url("valhalla-graphics.zip") ?>"><span>Download Media Package</span></a>
       <p class="small-text center"><strong>Includes:</strong> Facebook Cover Photo, Twitter Cover Photo, Google Plus Cover Photo, Logos of all shapes and sizes!
-    </div>
-
-  </section>
-
-  <section class="step">
-
-    <h1>Crowdspeaking <small>through Thunderclap</small></h1>
-
-    <div class="m-helpout-thunderclap">
-      <div class="m-helpout-thunderclap-info">
-        <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/thunderclap.png" alt="thunderclap" width="442" height="74">
-        <h2>What is Thunderclap?</h2>
-        <p>Thunderclap is the first crowd-speaking platform that helps people be heard by saying something together.
-        <h2>How does it work?</h2>
-        <p>If you reach your supporter goal, Thunderclap will blast out a timed Twitter, Facebook, or Tumblr post from all your supporters, creating a wave of attention.
-      </div>
-      <iframe frameborder='0' height='540px' src='https://www.thunderclap.it/projects/15333-growing-hope/embed' width='250px'></iframe>
-    </div>
-
-  </section>
-
-  <section class="step">
-
-    <h1>Crowdsourcing <small>Greenseed</small></h1>
-    <div class="m-helpout-greenseed">
-      <div class="m-helpout-greenseed-info">
-        <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/greenseed.png" alt="greenseed" width="440" height="99">
-        <p>Greenseed is Valhalla's very own crowdsourcing platform which is currently in it's first Beta stage we will be opening the potential to funding your own projects on Greenseed in the near future.
-      </div>
-      <iframe frameborder="0" height="540px" src="https://www.thunderclap.it/projects/12909-a-society-of-love-we-are/embed" width="250px"></iframe>
     </div>
 
   </section>
