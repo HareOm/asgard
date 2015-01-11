@@ -20,7 +20,6 @@
 - Marc will send fields for contributor form
 - Sharing put 5: Facebook, StumbleUpon, Reddit, Google+, Twitter
 - Categories: Contribute -> submit
-- Helpout remove uneccesary tabs and debug
 - Spruce up profile page
 
 ##POST LAUNCH
