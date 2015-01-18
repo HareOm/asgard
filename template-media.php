@@ -65,6 +65,8 @@ $media_query = new WP_Query( $args );
           $submit_page_id = 5102;
         } elseif( $post_type == "video" ) {
           $submit_page_id = 5425;
+        } elseif( $post_type == "link" ) {
+          $submit_page_id = 5466;
         } else {
           $submit_page_id = 5437; //contribute page
         }

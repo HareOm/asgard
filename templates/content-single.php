@@ -23,7 +23,6 @@
         <?php the_post_thumbnail() ?>
       </div>
       <?php endif ?>
-
       <?php asgard_share_post() ?>
 
       <?php if( $post->post_content != "" ): ?>

@@ -5,7 +5,7 @@ $postType = $_POST['type'];
 require_once('../../../../wp-load.php');
 
 // Make sure this came from the real form + site
-if(wp_verify_nonce( $_POST['_wpnonce'], 'submit_' . $postType)){
+if(wp_verify_nonce( $_POST['_wpnonce'], 'submit_' . $postType) )  {
 
     // Do some minor form validation to make sure there is content
     if ( isset($_POST['title']) ) {
@@ -32,10 +32,14 @@ if(wp_verify_nonce( $_POST['_wpnonce'], 'submit_' . $postType)){
 
             // Loop through and update post meta fields
             foreach($_POST as $key => $value){
-                if(!in_array($key, array('title', 'content', 'cat', 'tag', 'excerpt', 'image')))
-                {
-                    add_post_meta($postID, $key, $value, true);
+              if(!in_array($key, array('title', 'content', 'cat', 'tag', 'excerpt', 'image')))
+              {
+                add_post_meta($postID, $key, $value, true);
+                //Add link thumb as featured image too
+                if( $key == "link_thumbnail_url" ) {
+                  set_featured_image_from_src( $value, $postID );
                 }
+              }
             }
 
             // Loop through submitted images and save the first one as featured image

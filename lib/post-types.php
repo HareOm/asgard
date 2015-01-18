@@ -125,7 +125,7 @@ function val_post_type() {
 		'description'         => __( 'User submitted images', 'text_domain' ),
 		'taxonomies'         	=> array('category', 'post_tag'),
 		'labels'              => $labels,
-		'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'page-attributes', 'thumbnail', 'custom_fields'),
+		'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'page-attributes', 'thumbnail', 'custom-fields'),
 		'hierarchical'        => true,
 		'public'              => true,
 		'show_ui'             => true,
@@ -172,7 +172,7 @@ function val_post_type() {
 		'description'         => __( 'User submitted videos', 'text_domain' ),
 		'taxonomies'         	=> array('category', 'post_tag'),
 		'labels'              => $labels,
-		'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'page-attributes', 'thumbnail', 'custom_fields'),
+		'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'page-attributes', 'thumbnail', 'custom-fields'),
 		'hierarchical'        => true,
 		'public'              => true,
 		'show_ui'             => true,
@@ -189,6 +189,53 @@ function val_post_type() {
 		'capability_type'     => 'post',
 	);
 	register_post_type( 'video', $args );
+
+	/*********************
+	LINK CPT
+	*********************/
+	$labels = array(
+		'name'                => _x( 'Links', 'Post Type General Name', 'text_domain' ),
+		'singular_name'       => _x( 'Link', 'Post Type Singular Name', 'text_domain' ),
+		'menu_name'           => __( 'Links', 'text_domain' ),
+		'parent_item_colon'   => __( 'Parent Link:', 'text_domain' ),
+		'all_items'           => __( 'Links', 'text_domain' ),
+		'view_item'           => __( 'View Link', 'text_domain' ),
+		'add_new_item'        => __( 'Add New Link', 'text_domain' ),
+		'add_new'             => __( 'Add New', 'text_domain' ),
+		'edit_item'           => __( 'Edit Link', 'text_domain' ),
+		'update_item'         => __( 'Update Link', 'text_domain' ),
+		'search_items'        => __( 'Search Link', 'text_domain' ),
+		'not_found'           => __( 'Not found', 'text_domain' ),
+		'not_found_in_trash'  => __( 'Not found in Trash', 'text_domain' ),
+	);
+	$rewrite = array(
+		'slug'                => 'link',
+		'with_front'          => true,
+		'pages'               => true,
+		'feeds'               => true,
+	);
+	$args = array(
+		'label'               => __( 'Links', 'text_domain' ),
+		'description'         => __( 'User submitted images', 'text_domain' ),
+		'taxonomies'         	=> array('category', 'post_tag'),
+		'labels'              => $labels,
+		'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'page-attributes', 'thumbnail', 'custom-fields'),
+		'hierarchical'        => true,
+		'public'              => true,
+		'show_ui'             => true,
+		'show_in_menu'        => true,
+		'show_in_nav_menus'   => true,
+		'show_in_admin_bar'   => true,
+		'menu_position'       => 5,
+		'menu_icon'           => 'dashicons-admin-links',
+		'can_export'          => true,
+		'has_archive'         => false,
+		'exclude_from_search' => false,
+		'publicly_queryable'  => true,
+		'rewrite'             => $rewrite,
+		'capability_type'     => 'post',
+	);
+	register_post_type( 'link', $args );
 
 }
 
