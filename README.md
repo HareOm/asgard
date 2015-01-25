@@ -4,8 +4,8 @@
 [![Built with Roots]](https://github.com/roots/roots-sass)
 
 ##PRELAUNCH TODO
-- Add Link post type / submission
-- Add all feed to nav and sidebar filter
+- ~~Add Link post type / submission~~
+- ~~Add all feed to nav and sidebar filter~~
 - Homepage: 1st section, video popup sharing feature
 - Homepage: 2nd section, put sharing as short bar
 - Homepage: 3rd section, add email signup as is (Bold "free" in homepage signup)

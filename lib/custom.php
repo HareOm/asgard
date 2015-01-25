@@ -33,10 +33,13 @@ $exclude_post_types = array("attachment", "manifesto", "press_release");
 ?>
 
 <select class="form-control input-sm" onchange="javascript:location.href = this.value;">
+  <option value="<?php echo home_url("media") ?>">All Media</option>
 <?php
   foreach($post_types as $pt) {
     if( !in_array($pt, $exclude_post_types) ) {
-      if( $pt == "post" ) {
+      if( $pt == "all" ) {
+        $name = "All Media";
+      } elseif( $pt == "post" ) {
         $name = "Article";
       } else {
         $name = ucfirst($pt);
@@ -51,7 +54,6 @@ $exclude_post_types = array("attachment", "manifesto", "press_release");
       } else {
         $url = home_url("articles");
       }
-
       echo "<option";
       if($post_type == $pt) echo ' selected';
       echo " value=\"$url\">$name";

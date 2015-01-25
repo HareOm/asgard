@@ -62,7 +62,7 @@ $media_query = new WP_Query( $args );
         <?php the_category_filter(); ?>
       </div>
       <div class="form-group">
-        <?php the_type_filter() ?>
+        <?php the_type_filter("all") ?>
       </div>
       <div class="form-group">
         <?php the_date_filter() ?>
