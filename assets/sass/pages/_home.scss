@@ -147,3 +147,37 @@
   }
 
 }
+
+
+.social-engage {
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+
+  li {
+    display: inline-block;
+    margin-right: -4px;
+    margin: 4px 1px;
+    padding: 1em 2em;
+    vertical-align: middle;
+    min-height: 100px;
+  }
+
+  li.social-engage-fb {
+    background-color: rgba($facebook-color, 0.5);
+  }
+  li.social-engage-tt {
+    background-color: rgba($twitter-color, 0.5);
+  }
+  li.social-engage-su {
+    background-color: rgba($stumbleupon-color, 0.5);
+  }
+  li.social-engage-gp {
+    background-color: rgba($google-color, 0.5);
+  }
+
+}

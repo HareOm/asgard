@@ -17,10 +17,27 @@ Template Name: Home
   </a>
   <?php endif ?>
 </div>
-
+<section class="social-engage">
+  <ul>
+    <li class="social-engage-fb">
+      <div class="fb-like" data-href="http://facebook.com/valhalla.movement" data-send="true" data-layout="box_count" data-width="450" data-show-faces="false" data-share="false"></div>
+    </li>
+    <li class="social-engage-gp">
+      <div class="g-plus" data-action="share"data-annotation="vertical-bubble"></div>
+    </li>
+    <li class="social-engage-tt">
+      <a href="https://twitter.com/share" class="twitter-share-button" data-count="vertical"  data-url="http://valhallamovement.com" data-text="The Valhalla Movement" data-related="govalhalla">Tweet</a>
+    </li>
+    <li class="social-engage-su">
+      <su:badge layout="5"></su:badge>
+    </li>
+  </ul>
+   <!-- <a href="//www.reddit.com/submit" onclick="window.location = '//www.reddit.com/submit?url=' + encodeURIComponent(window.location); return false"> <img src="//www.redditstatic.com/spreddit7.gif" alt="submit to reddit" border="0" /> </a> -->
+</section>
 <section class="home-signup">
-  <h1>Stay Updated on the Movement</h1>
-  <p class="lead">Oh, and if you want free plans to an Earthship Greenhouse, sign up below!</p>
+  <h1>Be a Part of the Movement</h1>
+  <p class="lead">By signing up, you'll be able to contribute your own content to Valhalla Movement. A weekly digest email will also be sent to you of our top content and news.</p>
+  <p>Oh, and if you want free plans to an Earthship Greenhouse, sign up now!</p>
   <form accept-charset="UTF-8" action="https://madmimi.com/signups/subscribe/116070" method="post" target="_blank">
     <input name="utf8" type="hidden" value="✓">
     <input name="authenticity_token" type="hidden" value="koCHtDE5F6ssVOJILNMH17QnMF+JvATRouyaeP+Oa9U=">
@@ -31,11 +48,6 @@ Template Name: Home
 		  </span>
 		</div>
   </form>
-  <p>
-  	<div class="fb-like" data-href="http://facebook.com/valhalla.movement" data-send="true" data-layout="button_count" data-width="450" data-show-faces="false"></div>
-   	<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://valhallamovement.com" data-text="The Valhalla Movement" data-related="govalhalla">Tweet</a>
-  </p>
-</div>
 </section>
 <section class="home-media">
   <ul>
