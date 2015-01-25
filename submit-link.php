@@ -26,23 +26,23 @@ Template Name: Link Submit
     <div class="alert alert-danger" id="error" style="display:none"></div>
     <div class="hide" id="loading"><img width="50" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/ajax-loader.gif"/></div>
 
-    <div id="preview" style="display: none">
+    <div id="preview" class="link-preview" style="display:none">
         <div class="form-group moduleTight">
             <label>Title</label>
             <input minlength="3" maxlength="<?php echo $options['titleMaxLength']; ?>" class="input-lg form-control required" type="text" title="Title" name="title" id="title"/>
         </div>
         <div class="row">
-            <div class="col-sm-4">
-                <div class="relative embedContainer">
-                    <img class="embed">
-                    <input id="file" type="file" name="image"/>
-                    <button class="fileUpload">Upload an image</button>
-                </div>
+            <div class="col-sm-8">
+              <label>Description</label>
+              <textarea minlength="12" class="form-control required" maxlength="<?php echo $options['descMaxLength']; ?>" name="excerpt" placeholder="Enter a quick but useful description..." id="description"></textarea>
             </div>
             <br class="visible-xs"/>
-            <div class="col-sm-8">
-                <label>Description</label>
-                <textarea minlength="12" class="form-control required" maxlength="<?php echo $options['descMaxLength']; ?>" name="excerpt" placeholder="Enter a quick but useful description..." id="description"></textarea>
+            <div class="col-sm-4">
+              <div class="relative embedContainer">
+                  <img class="embed">
+                  <!-- <input id="file" type="file" name="image"/>
+                  <button class="fileUpload">Upload an image</button> -->
+              </div>
             </div>
         </div>
         <hr>

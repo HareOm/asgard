@@ -1,0 +1,270 @@
+.quicktags-toolbar input {
+    width: auto;
+}
+
+form #loading{
+    position: static;
+}
+
+.embedContainer{
+
+    #file{
+        height: 100px;
+        text-indent: -9000px;
+        opacity: 0;
+        z-index: 2;
+        width: 100%;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .fileUpload{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 240px;
+        margin: -22px 0 0 -120px;
+        border-radius: 1000px
+    }
+
+    .embed{
+        height: 100%;
+        margin: 0 auto;
+        position: absolute;
+        z-index: 3;
+    }
+
+    &:hover .embed{
+        z-index: 0;
+    }
+}
+
+#preview{
+    padding: 20px;
+    background: $gray-darker;
+
+    #title, #description {
+        font-size: 20px;
+        margin: 0;
+        color: white;
+        background: rgba(255,255,255,.1);
+        border: 1px solid #999;
+        margin-bottom: 10px;
+    }
+
+    #description {
+        width: 100%;
+        box-shadow: none;
+        display: block;
+        font-size: 14px;
+        line-height: 130%;
+        height: 90px;
+        padding: 10px;
+        margin: 0;
+    }
+
+    #file{
+        height: 116px;
+        text-indent: -9000px;
+        opacity: 0;
+        z-index: 2;
+        width: 100%;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .fileUpload{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        padding: 0;
+        border: none;
+        top: 0;
+        background: white;
+        border-radius: 0;
+        margin: 0;
+        left: 0;
+    }
+
+    .embed{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 3;
+    }
+
+    .embedContainer:hover .embed{
+        z-index: -1;
+    }
+
+     .videoEmbed{
+        width: 100%;
+        height: 100%;
+    }
+
+    label{
+        color: white;
+        margin-right: 7px;
+        font-weight: normal;
+    }
+
+}
+
+.submission-rules {
+    text-align: center;
+    margin-bottom: 50px;
+
+    li{
+        padding: 0 12px 0 8px;
+        margin: 0 2px 10px;
+        display: inline-block;
+        line-height: 30px;
+        font-size: 14px;
+
+        i{
+            margin-right: 10px;
+            margin-top: -3px;
+            opacity: .7;
+        }
+
+        &.no {
+            color: white;
+            background: $brand-danger;
+        }
+
+        &.yes {
+            color: #00b85f;
+            background: rgba(0,184,95,.1)
+        }
+
+    }
+
+}
+
+#duplicates div#results {
+    background: white;
+    -webkit-box-shadow: 0 1px 5px black;
+    -moz-box-shadow: 0 1px 5px black;
+    box-shadow: 0 1px 5px black;
+    margin: 0px 1px 25px;
+    width: 603px;
+    position: relative;
+    margin: 0 auto;
+}
+
+#duplicates div#results table {
+    min-height: 236px;
+    display: block;
+    padding-bottom: 52px;
+}
+
+#duplicates div#results table.quotes {
+    min-height: 210px;
+}
+
+#content #duplicates td.bbp-topic-title p {
+    font-size: 11px;
+    line-height: 110%;
+    margin: 0;
+}
+
+#duplicates td.bbp-topic-title {
+    padding: 0;
+}
+
+#duplicates #results td.bbp-topic-title a {
+    display: block;
+    padding: 8px 15px;
+    float: none;
+    font-weight: normal;
+}
+
+#duplicates div.no-duplicate {
+    display: block;
+    padding: 15px 15px;
+    font-weight: bold;
+    background: #d3e6f4;
+    font-size: 16px;
+    margin: 10px 0 0;
+    cursor: pointer;
+    position: absolute;
+    bottom: 0px;
+    width: 573px;
+    border-top: 1px solid #afc2d0;
+}
+
+#duplicates a.no-duplicate {
+    color: white;
+    background: #2a7eba;
+    padding: 4px 10px;
+    border-radius: 3px;
+    font-size: 13px;
+    line-height: 16px;
+    text-shadow: 0 1px 2px #00424f;
+}
+
+#duplicates a.no-duplicate:hover {
+    background: #2d85c4;
+}
+
+#duplicates {
+    width: 100%;
+    position: absolute;
+    margin: -20px 0 0;
+    left: 0;
+}
+
+#duplicates table.quotes tbody tr td p {
+    font-size: 11px;
+    line-height: 140%;
+}
+
+#ajax-quo #duplicates {
+    position: absolute;
+    top: 0;
+    margin: 250px 0 0;
+}
+
+#duplicates table.bbp-topics {
+    margin: 0 !important;
+}
+
+#duplicates div.home.full {
+    padding: 0;
+    background: none;
+    float: none;
+    border-radius: 0;
+    box-shadow: none;
+    width: 100%;
+}
+
+#results div.duplicate a {
+    font-weight: bold;
+    font-size: 14px;
+    display: block;
+    padding: 5px 0;
+}
+
+#results div.duplicate p {
+    display: none;
+}
+
+label.error{
+    background: $brand-danger;
+    color: white;
+    padding: 0 5px;
+}
+
+label.checked{
+    display: none !important;
+}
+
+.message-content p:last-child {
+    margin: 0;
+}
+
+#search-form span {
+    padding-right: 20px;
+    line-height: 88px;
+    font-size: 16px;
+}
