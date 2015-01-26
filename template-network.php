@@ -13,13 +13,13 @@
     <section class="col-md-3">
       <div class="panel panel-primary">
         <div class="panel-heading">
-          <h1 class="panel-title">Valhalla Communities</h1>
+          <h1 class="panel-title">Valhalla Montreal</h1>
         </div>
         <div class="panel-body">
           <div style="min-height:140px">
-          <p>In addition to Valhalla's media channel, we have established and encourage actual on-the-ground communities, the first of which marked the beginning of <a href="//montreal.valhallamovement.com">Valhalla in Montreal</a>.</p>
+          <p>In addition to Valhalla's media channel, we have established and encourage actual on-the-ground communities, the first of which marked the beginning of Valhalla in Montreal.</p>
           </div>
-          <div><a href="javascript:alert('Coming soon.');" class="btn btn-primary btn-block">Explore Communities</a></div>
+          <div><a href="//montreal.valhallamovement.com" class="btn btn-primary btn-block">Valhalla Montreal</a></div>
         </div>
       </div>
     </section>

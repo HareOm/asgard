@@ -131,9 +131,10 @@ Template Name: Home
         <span><?php echo get_the_title($post->ID) ?></span>
       </a>
     </li>
-    <li>
+    <li style="background-image: url(<?php echo get_stylesheet_directory_uri() ?>/assets/img/valhalla-tree-explosion.jpg)">
       <a href="<?php echo home_url('index.php?page_id=' . get_option('page_for_posts')) ?>">
-        <span>Read More</span>
+        <i class="fa fa-ellipsis-h"></i>
+        <span>Browse All Media</span>
       </a>
     </li>
   </ul>
