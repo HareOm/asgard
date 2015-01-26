@@ -182,6 +182,27 @@ function new_excerpt_more($more) {
 add_filter('excerpt_more', 'new_excerpt_more');
 
 
+function asgard_registration(){
+  ?>
+<script>
+  function generateUsername() {
+    var user_email = document.getElementById("user_email").value;
+    document.getElementById("user_login").value = user_email;
+  }
+</script>
+<form class="form-registration" action="<?php echo site_url('wp-login.php?action=register', 'login_post') ?>" method="post">
+  <input type="hidden" name="user_login" value="" id="user_login" class="input" />
+  <div class="input-group">
+    <input type="text" name="user_email" placeholder="E-Mail" id="user_email" class="form-control input-lg" onkeyup="generateUsername()">
+    <?php do_action('register_form'); ?>
+    <span class="input-group-btn">
+      <button type="submit" id="register" class="btn btn-primary btn-lg">Register</button>
+    </span>
+  </div>
+</form>
+  <?php
+}
+
 function get_terms_by_post_type( $taxonomies, $post_types ) {
 
     global $wpdb;
