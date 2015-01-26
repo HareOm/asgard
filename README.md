@@ -18,7 +18,7 @@
 - Highlight authors more, link to profile change
 - Comment add count
 - Marc will send fields for contributor form
-- Categories: Contribute -> submit
+- ~~Categories: Contribute -> submit~~
 - Spruce up profile page
 
 ##POST LAUNCH

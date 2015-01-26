@@ -48,16 +48,12 @@ $media_query = new WP_Query( $args );
       <div class="media-widget">
         <?php asgard_registration(); ?>
       </div>
-      <?php
-        if( $post_type == "image" ) {
-          $submit_page_id = 5102;
-        } elseif( $post_type == "video" ) {
-          $submit_page_id = 5425;
-        } else {
-          $submit_page_id = 5437; //contribute page
-        }
-      ?>
-      <p><a href="<?php echo get_permalink($submit_page_id) ?>" class="btn btn-primary btn-block"><i class="fa fa-plus-circle"></i> Contribute</a></p>
+      <div class="btn-group btn-group-justified">
+        <a href="<?php echo get_permalink(5437) ?>" class="btn btn-default btn-sm"><i class="fa fa-file-text"></i> Article</a>
+        <a href="<?php echo get_permalink(5425) ?>" class="btn btn-default btn-sm"><i class="fa fa-video-camera"></i> Video</a>
+        <a href="<?php echo get_permalink(5102) ?>" class="btn btn-default btn-sm"><i class="fa fa-image"></i> Image</a>
+        <a href="<?php echo get_permalink(5466) ?>" class="btn btn-default btn-sm"><i class="fa fa-link"></i> Link</a>
+      </div>
       <hr>
       <h2 class="h4">Filter</h2>
       <div class="form-group">
