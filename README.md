@@ -6,7 +6,7 @@
 ##PRELAUNCH TODO
 - ~~Add Link post type / submission~~
 - ~~Add all feed to nav and sidebar filter~~
-- Homepage: 1st section, video popup sharing feature
+- ~~Homepage: 1st section, video popup sharing feature~~
 - ~~Homepage: 2nd section, put sharing as short bar~~
 - ~~Homepage: 3rd section, add email signup as is (Bold "free" in homepage signup)~~
 - ~~Email Subscribe anywhere changes to user signup which will also add user to MadMimi list.~~

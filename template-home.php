@@ -10,12 +10,18 @@ Template Name: Home
   <div class="home-splash-tagline">
     <p><?php echo $post->post_content ?></p>
   </div>
-  <?php if( get_field("has_video") == 1 ): ?>
+
+<a href="<?php echo get_stylesheet_directory_uri() ?>/promo-video.html" class="home-splash-watch" data-toggle="lightbox" data-gallery="remoteload">
+  <i class="fa fa-youtube-play"></i>
+  <span>Watch Video</span>
+</a>
+
+  <!-- <?php if( get_field("has_video") == 1 ): ?>
   <a href="<?php the_field("video_url") ?>" class="home-splash-watch" data-toggle="lightbox">
     <i class="fa fa-youtube-play"></i>
     <span>Watch Video</span>
   </a>
-  <?php endif ?>
+  <?php endif ?> -->
 </div>
 <section class="social-engage">
   <ul>
