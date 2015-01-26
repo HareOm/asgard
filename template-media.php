@@ -59,7 +59,9 @@ $media_query = new WP_Query( $args );
       <h1>
         <?php echo roots_title(); ?>
       </h1>
-      <?php dynamic_sidebar('sidebar-media'); ?>
+      <div class="media-widget">
+        <?php asgard_registration(); ?>
+      </div>      
       <?php
         if( $post_type == "image" ) {
           $submit_page_id = 5102;

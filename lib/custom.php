@@ -182,7 +182,7 @@ function new_excerpt_more($more) {
 add_filter('excerpt_more', 'new_excerpt_more');
 
 
-function asgard_registration(){
+function asgard_registration($size=""){
   ?>
 <script>
   function generateUsername() {
@@ -193,10 +193,10 @@ function asgard_registration(){
 <form class="form-registration" action="<?php echo site_url('wp-login.php?action=register', 'login_post') ?>" method="post">
   <input type="hidden" name="user_login" value="" id="user_login" class="input" />
   <div class="input-group">
-    <input type="text" name="user_email" placeholder="E-Mail" id="user_email" class="form-control input-lg" onkeyup="generateUsername()">
+    <input type="text" name="user_email" placeholder="E-Mail" id="user_email" class="form-control<?php if($size=="lg") echo ' input-lg'; ?>" onkeyup="generateUsername()">
     <?php do_action('register_form'); ?>
     <span class="input-group-btn">
-      <button type="submit" id="register" class="btn btn-primary btn-lg">Register</button>
+      <button type="submit" id="register" class="btn btn-primary <?php if($size=="lg") echo ' btn-lg'; ?>">Register</button>
     </span>
   </div>
 </form>

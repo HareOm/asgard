@@ -38,7 +38,7 @@ Template Name: Home
   <h1>Be a Part of the Movement</h1>
   <p class="lead">By signing up, you'll be able to contribute your own content to Valhalla Movement.</p>
   <p>A weekly digest email will also be sent to you of our top content and news.<br>Oh, and if you want <strong>free</strong> plans to an Earthship Greenhouse, sign up now!</p>
-  <?php asgard_registration() ?>
+  <?php asgard_registration("lg") ?>
   <!-- <form accept-charset="UTF-8" action="https://madmimi.com/signups/subscribe/116070" method="post" target="_blank">
     <input name="utf8" type="hidden" value="✓">
     <input name="authenticity_token" type="hidden" value="koCHtDE5F6ssVOJILNMH17QnMF+JvATRouyaeP+Oa9U=">
