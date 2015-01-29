@@ -11,7 +11,7 @@
 - ~~Homepage: 3rd section, add email signup as is (Bold "free" in homepage signup)~~
 - ~~Email Subscribe anywhere changes to user signup which will also add user to MadMimi list.~~
 - ~~Homepage: Media: Read More - better read more~~
-- Network: Marc will provide list, add links to sites.
+- ~~Network: Marc will provide list, add links to sites.~~
 - ~~Network: Valhalla Communities -> Change to Valhalla Montreal~~
 - Network: Marc will send list of social networks to be added
 - ~~Finish contact page~~

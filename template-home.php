@@ -157,12 +157,14 @@ Template Name: Home
    var locations = [
       ['Valhalla Montreal', 45.400914, -73.376678, 3],
       ['Sirius Community', 42.421172,-72.423914, 3],
-      ['Valhalla Arizona', 34.1682185,-111.930907, 3]
+      ['Direct Action Valhalla', 33.7677129,-84.420604],
+      ['Valhalla Arizona', 33.454172,-112.051862, 3],
+      ['Barefoot College', 26.652886, 74.9374651, 3]
     ];
 
    var map = new google.maps.Map(document.getElementById('map-canvas'), {
-      zoom: 4,
-      center: new google.maps.LatLng(45.400914, -73.376678),
+      zoom: 3,
+      center: new google.maps.LatLng(41.0508085,-25.1198002),
       scrollwheel: false,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     });
