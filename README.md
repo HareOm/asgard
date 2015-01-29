@@ -15,7 +15,7 @@
 - ~~Network: Valhalla Communities -> Change to Valhalla Montreal~~
 - Network: Marc will send list of social networks to be added
 - ~~Finish contact page~~
-- Highlight authors more, link to profile change
+- ~~Highlight authors more, link to profile change~~
 - Comment add count
 - Marc will send fields for contributor form
 - ~~Categories: Contribute -> submit~~

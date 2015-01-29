@@ -58,8 +58,9 @@ $article-item-meta: 35px;
       }
     }
   }
-  .article-item-meta-link {
-    bottom: 0;
+  .article-item-meta-author {
+    bottom: -2px;
+    padding: 0;
   }
   .article-item-meta-comments {
     bottom: 35px;

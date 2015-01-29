@@ -9,7 +9,13 @@
       <i class="fa fa-comment-o"></i>
       <?php if( get_comments_number() > 0 ) echo get_comments_number(); ?>
     </a>
-    <a href="<?php the_permalink(); ?>" class="article-item-meta-link"><i class="fa fa-link"></i></a>
+    <a href="<?php echo bp_core_get_user_domain($post->post_author) ?>" class="article-item-meta-author">
+      <?php echo bp_core_fetch_avatar( array(
+        'item_id' => $post->post_author,
+        'width' => 32,
+        'height' => 32
+      )) ?>
+    </a>
   </div>
   <a href="<?php the_permalink(); ?>">
     <?php
