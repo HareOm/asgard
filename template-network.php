@@ -63,4 +63,11 @@
       </div>
     </section>
   </div>
+  <p class="network-list">
+    <a href="//www.facebook.com/valhalla.movement"><i class="fa fa-facebook"></i></a>
+    <a href="//twitter.com/govalhalla"><i class="fa fa-twitter"></i></a>
+    <a href="//plus.google.com/+TheValhallaMovement"><i class="fa fa-google-plus"></i></a>
+    <a href="//www.youtube.com/user/TheValhallaMovement"><i class="fa fa-youtube"></i></a>
+    <a href="//www.pinterest.com/govalhalla/"><i class="fa fa-pinterest"></i></a>
+  </p>
 </div>
