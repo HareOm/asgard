@@ -4,9 +4,9 @@
 [![Built with Roots]](https://github.com/roots/roots-sass)
 
 ##PRELAUNCH TODO
-- Comment add count
 - Marc will send fields for contributor form
 - Spruce up profile page
+- ~~Comment add count~~
 - ~~Network: Marc will send list of social networks to be added~~
 - ~~Add Link post type / submission~~
 - ~~Add all feed to nav and sidebar filter~~

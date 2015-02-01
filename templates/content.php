@@ -7,7 +7,7 @@
     </div>
     <a href="<?php the_permalink(); ?>#comments" class="article-item-meta-comments">
       <i class="fa fa-comment-o"></i>
-      <?php if( get_comments_number() > 0 ) echo get_comments_number(); ?>
+      <?php if( get_comments_number() > 0 ) echo '<span class="meta-comment-count">' . get_comments_number() . '</span>'; ?>
     </a>
     <a href="<?php echo bp_core_get_user_domain($post->post_author) ?>" class="article-item-meta-author">
       <?php echo bp_core_fetch_avatar( array(

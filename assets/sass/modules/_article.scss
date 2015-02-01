@@ -46,6 +46,13 @@ $article-item-meta: 35px;
       left: 0;
     }
 
+    a {
+      &.article-item-meta-comments {
+        height: auto;
+        line-height: auto;
+      }
+    }
+
     .vote {
       a.hethens-voting-vote {
         position: relative;
@@ -79,4 +86,10 @@ $article-item-meta: 35px;
   }
   .article-item-title {
     font-size: 1.5em;
+  }
+
+  .meta-comment-count {
+    display: block;
+    font-size: 0.8em;
+    line-height: 1;
   }

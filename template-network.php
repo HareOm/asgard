@@ -81,5 +81,6 @@
     <a href="//plus.google.com/+TheValhallaMovement"><i class="fa fa-google-plus"></i></a>
     <a href="//www.youtube.com/user/TheValhallaMovement"><i class="fa fa-youtube"></i></a>
     <a href="//www.pinterest.com/govalhalla/"><i class="fa fa-pinterest"></i></a>
+    <a href="//itunes.apple.com/ca/podcast/valhallas-superhero-academy/id888603342?mt=2"><i class="fa fa-apple"></i></a>
   </p>
 </div>
