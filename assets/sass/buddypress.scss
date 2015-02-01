@@ -1002,12 +1002,13 @@ a.bp-title-button {
 #buddypress table.messages-notices tr td.label,
 #buddypress table.forum tr td.label {
 	border-right: 1px solid #eaeaea;
-	font-weight: boldg;
+	font-weight: bold;
 	width: 25%;
 }
 #buddypress table.profile-fields tr td.label {
   display: table-cell;
-  background: $blue;
+  border-right: 4px solid $blue;
+  color: $dark;
 }
 
 #buddypress table tr td.thread-info p {
@@ -1296,13 +1297,10 @@ body.activity-permalink #buddypress ul.item-list li.activity-item {
 	font-size: 80%;
 	font-weight: normal;
 }
-#buddypress div.item-list-tabs {
+#buddypress .item-list-tabs {
 	background: transparent;
 	clear: left;
 	overflow: hidden;
-}
-
-#buddypress div.item-list-tabs {
   ul {
     list-style: none;
     margin: 0;
@@ -1311,41 +1309,50 @@ body.activity-permalink #buddypress ul.item-list li.activity-item {
   li {
     display: inline-block;
     margin: 0;
-    margin-right: -4px;
+    &.last select {
+      max-width: 175px;
+    }
+  }
+  ul li a,
+  ul li span {
+    display: block;
+    padding: 1em 2em;
+    background: rgba($dark, 0.8);
+    color: $light;
+    text-decoration: none;
+  }
+  ul li a span {
+    background: #eee;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    color: #999;
+    display: inline;
+    font-size: 70%;
+    margin-left: 2px;
+    padding: 3px 6px;
+    text-align: center;
+    vertical-align: middle;
+  }
+  ul li.selected a span,
+  ul li.current a span,
+  ul li a:hover span {
+    background-color: #eee;
+  }
+  ul li a:hover {
+    background-color: $blue;
+    color: $light;
   }
 }
-#buddypress div.item-list-tabs ul li.last select {
-	max-width: 175px;
-}
-#buddypress div.item-list-tabs ul li a,
-#buddypress div.item-list-tabs ul li span {
-	display: block;
-	padding: 5px 10px;
-	text-decoration: none;
-}
-#buddypress div.item-list-tabs ul li a span {
-	background: #eee;
-	border-radius: 50%;
-	border: 1px solid #ccc;
-	color: #999;
-	display: inline;
-	font-size: 70%;
-	margin-left: 2px;
-	padding: 3px 6px;
-	text-align: center;
-	vertical-align: middle;
+
+#buddypress #item-body .item-list-tabs a {
+  font-size: 0.8em;
+  padding: 0.5em 1em;
 }
 #buddypress div.item-list-tabs ul li.selected a,
 #buddypress div.item-list-tabs ul li.current a {
-	background-color: #eee;
-	color: #555;
-	opacity: .8;
-	font-weight: bold;
-}
-#buddypress div.item-list-tabs ul li.selected a span,
-#buddypress div.item-list-tabs ul li.current a span,
-#buddypress div.item-list-tabs ul li a:hover span {
-	background-color: #eee;
+	background-color: $blue;
+	color: $light;
+	font-weight: 700;
 }
 #buddypress div.item-list-tabs ul li.selected a span,
 #buddypress div.item-list-tabs ul li.current a span {
@@ -1679,4 +1686,18 @@ body.register #buddypress div.page ul {
   padding: 2em;
   max-width: 800px;
   margin: auto;
+}
+
+.activity-button {
+  background: $blue;
+  color: $light;
+  display: inline-block;
+  font-size: 0.8em;
+  padding: 0.5em 1em;
+  border-radius: 1.2em;
+  &:hover {
+    text-decoration: none;
+    color: $light;
+    background: darken($blue, 10%);
+  }
 }
