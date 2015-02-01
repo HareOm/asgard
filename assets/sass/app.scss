@@ -120,7 +120,10 @@ h1, h2, h3, h4,
   font-weight: 300;
   font-size: 0.9em;
   text-transform: none;
-  margin: 3px 0 0 95px;
+  margin: 3px 0 0 9em;
+  @include bp(phone) {
+    margin-left: 7em;
+  }
   color: $light;
   a {
     color: $light;
