@@ -4,10 +4,10 @@
 [![Built with Roots]](https://github.com/roots/roots-sass)
 
 ##PRELAUNCH TODO
-- Network: Marc will send list of social networks to be added
 - Comment add count
 - Marc will send fields for contributor form
 - Spruce up profile page
+- ~~Network: Marc will send list of social networks to be added~~
 - ~~Add Link post type / submission~~
 - ~~Add all feed to nav and sidebar filter~~
 - ~~Homepage: 1st section, video popup sharing feature~~
