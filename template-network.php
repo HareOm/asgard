@@ -68,7 +68,7 @@
           <img class="img-responsive" src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/superhero-academy.png">
           </div>
           <div style="min-height:140px">
-          <p>Superhero Academy is dedicated to encouraging and supporting everyday superheroes.</p>
+          <p>Superhero Academy is dedicated to encouraging and supporting everyday superheroes as an online interactive school.</p>
           </div>
           <div><a href="//superheroacademy.net" class="btn btn-primary btn-block">Become a Superhero</a></div>
         </div>

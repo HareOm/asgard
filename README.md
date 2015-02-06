@@ -4,7 +4,9 @@
 [![Built with Roots]](https://github.com/roots/roots-sass)
 
 ##PRELAUNCH TODO
-- Marc will send fields for contributor form
+- Submit Link: Preview styles
+- Not logged in: submit log in/register forms on page
+- ~~Marc will send fields for contributor form~~
 - ~~Spruce up profile page~~
 - ~~Comment add count~~
 - ~~Network: Marc will send list of social networks to be added~~
@@ -21,6 +23,9 @@
 - ~~Highlight authors more, link to profile change~~
 - ~~Categories: Contribute -> submit~~
 
+##Migrating
+- Setup Redirects
+
 ##POST LAUNCH
 - Navigation, content submit dropdown
 - integrate "total shares"
@@ -28,3 +33,5 @@
 - Video, youtube share/subscribe
 - Integrate Static Pages better
 - Better Buddypress integration
+- Featuring posts (valhalla logo)
+- Profile city input autocomplete
