@@ -60,9 +60,11 @@ $media_query = new WP_Query( $args );
       <h1>
         <?php echo roots_title(); ?>
       </h1>
+      <?php if(!is_user_logged_in()): ?>
       <div class="media-widget">
         <?php asgard_registration(); ?>
       </div>
+      <?php endif ?>
       <?php
         if( $post_type == "image" ) {
           $submit_page_id = 5490;
