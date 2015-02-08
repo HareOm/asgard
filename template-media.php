@@ -36,8 +36,6 @@ if( $date == "week" ) {
     'month' => $today['mon'],
     'day'   => $today['mday'],
   );
-} else {
-  $date_query = array();
 }
 
 $args = array(
@@ -46,8 +44,11 @@ $args = array(
   'order'          => 'DESC',
   'meta_key'       => 'hethens_vote_count',
   'orderby'        => 'meta_value_num date',
-  'date_query'     => array($date_query),
+  //'date_query'     => array($date_query),
 );
+if( $date != "all" ) {
+  $args['date_query'] = array($date_query);
+}
 $media_query = new WP_Query( $args );
 
 
@@ -61,14 +62,14 @@ $media_query = new WP_Query( $args );
       </h1>
       <div class="media-widget">
         <?php asgard_registration(); ?>
-      </div>      
+      </div>
       <?php
         if( $post_type == "image" ) {
-          $submit_page_id = 5102;
+          $submit_page_id = 5100;
         } elseif( $post_type == "video" ) {
-          $submit_page_id = 5425;
+          $submit_page_id = 5492;
         } elseif( $post_type == "link" ) {
-          $submit_page_id = 5466;
+          $submit_page_id = 5462;
         } else {
           $submit_page_id = 5437; //contribute page
         }

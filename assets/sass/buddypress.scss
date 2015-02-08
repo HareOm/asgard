@@ -144,17 +144,18 @@ Hello, this is the BuddyPress Legacy stylesheet.
     	margin-left: 75px;
     }
     textarea {
-    	background: #fff;
-    	color: #555;
-    	font-family: inherit;
-    	font-size: 90%;
-    	height: 20px;
-    	padding: 6px;
-    	width: 98%;
-    }
+/*     	background: #fff;
+color: #555;
+font-family: inherit;
+font-size: 90%;
+height: 20px;
+padding: 6px;
+width: 100%;
+ */    }
     #whats-new-options {
     	overflow: auto;
     	height: 0;
+      margin-top: 1em;
       select {
       	max-width: 200px;
       	margin-top: 12px;
@@ -162,7 +163,6 @@ Hello, this is the BuddyPress Legacy stylesheet.
     }
     #whats-new-submit {
     	float: right;
-    	margin-top: 12px;
     }
   }
 
@@ -181,6 +181,14 @@ body.no-js #buddypress {
 /*--------------------------------------------------------------
 3.1.1 - Activity Listing
 --------------------------------------------------------------*/
+.activity #buddypress {
+  margin-top: 4em;
+}
+#buddypress {
+  .activity {
+    background: #fff;
+  }
+}
 #buddypress ul.activity-list li {
 	overflow: hidden;
 	padding: 15px 0 0;
@@ -1125,12 +1133,15 @@ a.bp-title-button {
 #buddypress .item-body {
 	margin: 20px 0;
 }
-#buddypress span.activity {
+#buddypress #item-header-content span.activity {
 	display: inline-block;
 	font-size: 80%;
 	opacity: 0.8;
-	padding: 0;
+	padding: 0 1em;
+  background: #3e6b8a;
+  border-radius: 1em;
 }
+#-personal-li { display: none !important; } //HACK
 #buddypress span.user-nicename {
 	color: #777;
 	display: inline-block;

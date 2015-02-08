@@ -6,6 +6,14 @@ form #loading{
     position: static;
 }
 
+input[type="submit"] {
+  @extend .btn;
+  @extend .btn-primary;
+}
+textarea {
+  @extend .form-control;
+}
+
 .embedContainer{
 
     #file{

@@ -6,6 +6,7 @@
 ##PRELAUNCH TODO
 - Submit Link: Preview styles
 - Not logged in: submit log in/register forms on page
+- Style PM page
 - ~~Marc will send fields for contributor form~~
 - ~~Spruce up profile page~~
 - ~~Comment add count~~
@@ -27,6 +28,7 @@
 - Setup Redirects
 
 ##POST LAUNCH
+- Add social links to profile and include in author meta
 - Navigation, content submit dropdown
 - integrate "total shares"
 - Images, add hover share
