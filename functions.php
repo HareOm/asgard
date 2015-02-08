@@ -148,3 +148,21 @@ function asgard_rss_template() {
 function asgard_rss_render() {
 	get_template_part( 'feed', 'weeklyDigest' );
 }
+
+function asgard_no_orphans( $title ) {
+  global $post;
+  if( $title == $post->post_title ){
+    //Take apart
+    $title_words = explode(' ', $title);
+    $tile_without_last_word = array_slice($title_words, 0, -1);
+    $last_word = array_slice($title_words, -1, 1);
+
+    //Put back together
+    $new_title = implode(' ', $tile_without_last_word);
+    //add in non-breaking space
+    $new_title .= '&nbsp;' . $last_word[0];
+    $title = $new_title;
+  }
+  return $title;
+}
+add_filter( 'the_title', 'asgard_no_orphans', 10, 2 );
