@@ -65,11 +65,11 @@ $media_query = new WP_Query( $args );
       </div>
       <?php
         if( $post_type == "image" ) {
-          $submit_page_id = 5100;
+          $submit_page_id = 5490;
         } elseif( $post_type == "video" ) {
-          $submit_page_id = 5492;
+          $submit_page_id = 5425;
         } elseif( $post_type == "link" ) {
-          $submit_page_id = 5462;
+          $submit_page_id = 5466;
         } else {
           $submit_page_id = 5437; //contribute page
         }
