@@ -7,7 +7,6 @@
       </header>
     </div>
     <div class="col-md-8 col-md-offset-2">
-
       <?php
         if( get_post_type() == "video" ):
           $video_url = get_post_meta($post->ID, "video_url", true);
@@ -17,7 +16,10 @@
       <div class="the-video vid-res">
         <?php echo $video_embed; ?>
       </div>
-
+      <?php elseif(is_attachment()): ?>
+      <div class="the-image">
+        <?php the_content() ?>
+      </div>
       <?php elseif( has_post_thumbnail() ): ?>
       <div class="the-image">
         <?php the_post_thumbnail() ?>
