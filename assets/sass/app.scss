@@ -197,7 +197,9 @@ h1, h2, h3, h4,
 
 .the-image {
   img {
-    @extend .img-responsive;
+    display: block;
+    width: 100%;
+    height: auto;
   }
 }
 
