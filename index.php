@@ -52,10 +52,10 @@ $media_query = new WP_Query( $args );
       <?php endif ?>
       <h3>Submit</h3>
       <div class="btn-group btn-group-justified">
-        <a href="<?php echo get_permalink(5437) ?>" class="btn btn-default btn-sm"><i class="fa fa-file-text"></i> Article</a>
-        <a href="<?php echo get_permalink(5425) ?>" class="btn btn-default btn-sm"><i class="fa fa-video-camera"></i> Video</a>
-        <a href="<?php echo get_permalink(5490) ?>" class="btn btn-default btn-sm"><i class="fa fa-image"></i> Image</a>
-        <a href="<?php echo get_permalink(5466) ?>" class="btn btn-default btn-sm"><i class="fa fa-link"></i> Link</a>
+        <a href="<?php echo get_permalink(get_theme_mod('contribute_page')) ?>" class="btn btn-default btn-sm"><i class="fa fa-file-text"></i> Article</a>
+        <a href="<?php echo get_permalink(get_theme_mod('submit_video_page')) ?>" class="btn btn-default btn-sm"><i class="fa fa-video-camera"></i> Video</a>
+        <a href="<?php echo get_permalink(get_theme_mod('submit_image_page')) ?>" class="btn btn-default btn-sm"><i class="fa fa-image"></i> Image</a>
+        <a href="<?php echo get_permalink(get_theme_mod('submit_link_page')) ?>" class="btn btn-default btn-sm"><i class="fa fa-link"></i> Link</a>
       </div>
       <hr>
       <h2 class="h4">Filter</h2>

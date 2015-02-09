@@ -166,3 +166,105 @@ function asgard_no_orphans( $title ) {
   return $title;
 }
 add_filter( 'the_title', 'asgard_no_orphans', 10, 2 );
+
+
+function asgard_sanitize_integer( $input ) {
+  if( is_numeric( $input ) ) {
+    return intval( $input );
+  }
+}
+function asgard_customizer( $wp_customize ) {
+
+  $wp_customize->add_section( 'media_options', array(
+      'title' => 'Media Options',
+      'description' => 'Options for media pages.',
+  ) );
+  //Article Page
+  $wp_customize->add_setting( 'article_page', array(
+      'sanitize_callback' => 'asgard_sanitize_integer',
+  ) );
+
+  $wp_customize->add_control( 'article_page', array(
+      'type' => 'dropdown-pages',
+      'label' => 'Article Page',
+      'section' => 'media_options',
+  ) );
+
+  //Contribute Page
+  $wp_customize->add_setting( 'contribute_page', array(
+      'sanitize_callback' => 'asgard_sanitize_integer',
+  ) );
+
+  $wp_customize->add_control( 'contribute_page', array(
+      'type' => 'dropdown-pages',
+      'label' => 'Contribute Page',
+      'section' => 'media_options',
+  ) );
+
+  //Image Page
+  $wp_customize->add_setting( 'image_page', array(
+      'sanitize_callback' => 'asgard_sanitize_integer',
+  ) );
+
+  $wp_customize->add_control( 'image_page', array(
+      'type' => 'dropdown-pages',
+      'label' => 'Image Page',
+      'section' => 'media_options',
+  ) );
+
+  //Submit Image Page
+  $wp_customize->add_setting( 'submit_image_page', array(
+      'sanitize_callback' => 'asgard_sanitize_integer',
+  ) );
+
+  $wp_customize->add_control( 'submit_image_page', array(
+      'type' => 'dropdown-pages',
+      'label' => 'Submit Image Page',
+      'section' => 'media_options',
+  ) );
+
+  //Video Page
+  $wp_customize->add_setting( 'video_page', array(
+      'sanitize_callback' => 'asgard_sanitize_integer',
+  ) );
+
+  $wp_customize->add_control( 'video_page', array(
+      'type' => 'dropdown-pages',
+      'label' => 'Video Page',
+      'section' => 'media_options',
+  ) );
+
+  //Submit Video Page
+  $wp_customize->add_setting( 'submit_video_page', array(
+      'sanitize_callback' => 'asgard_sanitize_integer',
+  ) );
+
+  $wp_customize->add_control( 'submit_video_page', array(
+      'type' => 'dropdown-pages',
+      'label' => 'Submit Video Page',
+      'section' => 'media_options',
+  ) );
+
+  //Link Page
+  $wp_customize->add_setting( 'link_page', array(
+      'sanitize_callback' => 'asgard_sanitize_integer',
+  ) );
+
+  $wp_customize->add_control( 'link_page', array(
+      'type' => 'dropdown-pages',
+      'label' => 'Link Page',
+      'section' => 'media_options',
+  ) );
+
+  //Submit Link Page
+  $wp_customize->add_setting( 'submit_link_page', array(
+      'sanitize_callback' => 'asgard_sanitize_integer',
+  ) );
+
+  $wp_customize->add_control( 'submit_link_page', array(
+      'type' => 'dropdown-pages',
+      'label' => 'Submit Link Page',
+      'section' => 'media_options',
+  ) );
+}
+add_action( 'customize_register', 'asgard_customizer' );

@@ -67,13 +67,13 @@ $media_query = new WP_Query( $args );
       <?php endif ?>
       <?php
         if( $post_type == "image" ) {
-          $submit_page_id = 5490;
+          $submit_page_id = get_theme_mod('submit_image_page');
         } elseif( $post_type == "video" ) {
-          $submit_page_id = 5425;
+          $submit_page_id = get_theme_mod('submit_video_page');
         } elseif( $post_type == "link" ) {
-          $submit_page_id = 5466;
+          $submit_page_id = get_theme_mod('submit_link_page');
         } else {
-          $submit_page_id = 5437; //contribute page
+          $submit_page_id = get_theme_mod('contribute_page');
         }
       ?>
       <p><a href="<?php echo get_permalink($submit_page_id) ?>" class="btn btn-primary btn-block"><i class="fa fa-plus-circle"></i> Submit <?php echo ucfirst($post_type) ?></a></p>
