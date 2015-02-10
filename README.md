@@ -3,31 +3,11 @@
 [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 [![Built with Roots]](https://github.com/roots/roots-sass)
 
-##PRELAUNCH TODO
+
+##POST LAUNCH
 - Submit Link: Preview styles
 - Not logged in: submit log in/register forms on page
 - Style PM page
-- ~~Marc will send fields for contributor form~~
-- ~~Spruce up profile page~~
-- ~~Comment add count~~
-- ~~Network: Marc will send list of social networks to be added~~
-- ~~Add Link post type / submission~~
-- ~~Add all feed to nav and sidebar filter~~
-- ~~Homepage: 1st section, video popup sharing feature~~
-- ~~Homepage: 2nd section, put sharing as short bar~~
-- ~~Homepage: 3rd section, add email signup as is (Bold "free" in homepage signup)~~
-- ~~Email Subscribe anywhere changes to user signup which will also add user to MadMimi list.~~
-- ~~Homepage: Media: Read More - better read more~~
-- ~~Network: Marc will provide list, add links to sites.~~
-- ~~Network: Valhalla Communities -> Change to Valhalla Montreal~~
-- ~~Finish contact page~~
-- ~~Highlight authors more, link to profile change~~
-- ~~Categories: Contribute -> submit~~
-
-##Migrating
-- Setup Redirects
-
-##POST LAUNCH
 - Add social links to profile and include in author meta
 - Navigation, content submit dropdown
 - integrate "total shares"
@@ -37,3 +17,12 @@
 - Better Buddypress integration
 - Featuring posts (valhalla logo)
 - Profile city input autocomplete
+- ~~Google on front page is for sharing, not for following.~~
+- Twitter on front page should be for following.
+- ~~Learn More button brings you to a random video.~~
+- Can not up vote on video/photo/article/link page
+- ~~Be capable to edit Linked-Articles !~~
+- ~~Make Videos size properly.~~
+- ~~Linked Articles make user look like the author.~~
+- Make Author Photo Larger
+- Give Author more ability to customize profile (location)
