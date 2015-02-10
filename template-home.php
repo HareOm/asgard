@@ -29,9 +29,11 @@ Template Name: Home
       <div class="fb-like" data-href="http://facebook.com/valhalla.movement" data-send="true" data-layout="box_count" data-width="450" data-show-faces="false" data-share="false"></div>
     </li>
     <li class="social-engage-gp">
-      <div class="g-plus" data-action="share"data-annotation="vertical-bubble"></div>
+      <div class="g-follow" data-annotation="vertical-bubble" data-height="20" data-href="//plus.google.com/+TheValhallaMovement/posts" data-rel="publisher"></div>
+      <!-- <div class="g-plus" data-action="share"data-annotation="vertical-bubble"></div> -->
     </li>
     <li class="social-engage-tt">
+      <!-- <a class="twitter-follow-button" href="https://twitter.com/govalhalla" data-count="vertical" data-lang="en">Follow @govalhalla</a> -->
       <a href="https://twitter.com/share" class="twitter-share-button" data-count="vertical"  data-url="http://valhallamovement.com" data-text="The Valhalla Movement" data-related="govalhalla">Tweet</a>
     </li>
     <li class="social-engage-su">
