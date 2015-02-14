@@ -1,6 +1,6 @@
 <?php
 //SET UP VARS
-$post_type = get_post_type();
+$post_type = array('post','image','video','link');
 
 $date = $_GET['date'];
 $today = getdate();
@@ -30,8 +30,9 @@ $paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
 $args = array(
   'post_type'      => $post_type,
 	'post_status'    => 'publish',
-	'orderby'        => 'date',
-	'order'          => 'DESC',
+  'order'          => 'DESC',
+  'meta_key'       => 'hethens_vote_count',
+  'orderby'        => 'meta_value_num date',
   'cat'            => $category,
 	'date_query'     => array($date_query),
   'paged'          => $paged
