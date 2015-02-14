@@ -75,6 +75,7 @@ $article-item-meta: 35px;
 
   .article-item-content {
     height: 100%;
+    min-height: 120px;
     overflow: hidden;
     padding: $article-item-meta;
     * {
