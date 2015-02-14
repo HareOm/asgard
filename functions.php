@@ -129,9 +129,9 @@ add_action('login_head', 'asgard_login_css');
 
 //CUSTOM EXCERPT LENGTH
 function custom_excerpt_length( $length ) {
-	return 20;
+	return 52;
 }
-//add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
 
 add_action( 'after_setup_theme', 'asgard_rss_template' );
