@@ -39,6 +39,7 @@ echo '<?xml version="1.0" encoding="' . get_option( 'blog_charset' ) . '"?' . '>
 	xmlns:atom="http://www.w3.org/2005/Atom"
 	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
 	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	xmlns:media="http://search.yahoo.com/mrss/"
 	<?php do_action( 'rss2_ns' ); ?>
 >
 
@@ -56,9 +57,7 @@ echo '<?xml version="1.0" encoding="' . get_option( 'blog_charset' ) . '"?' . '>
 		<!-- Feed Logo (optional) -->
 		<image>
 			<url><?php echo $postimage ?></url>
-			<title>
-				<?php bloginfo_rss( 'description' ) ?>
-			</title>
+			<title><?php bloginfo_rss( 'name' ) ?></title>
 			<link><?php bloginfo_rss( 'url' ) ?></link>
 		</image>
 
@@ -67,15 +66,16 @@ echo '<?xml version="1.0" encoding="' . get_option( 'blog_charset' ) . '"?' . '>
 		<!-- Start loop -->
 		<?php
     $date_query = array(
-      'after' => '1 week ago'
+      'after' => '-1 week'
     );
     $args = array(
+			'post_type'			 => array('post','image','video','link'),
       'post_status'    => 'publish',
       'posts_per_page' => 5,
       'order'          => 'DESC',
       'meta_key'       => 'hethens_vote_count',
       'orderby'        => 'meta_value_num date',
-      'date_query'     => array($date_query),
+      'date_query'     => $date_query
     );
     $media_query = new WP_Query( $args );
     while( $media_query->have_posts()) : $media_query->the_post();
@@ -84,11 +84,10 @@ echo '<?xml version="1.0" encoding="' . get_option( 'blog_charset' ) . '"?' . '>
 			<item>
 				<title><?php the_title_rss(); ?></title>
 				<link><?php the_permalink_rss(); ?></link>
+				<description><?php the_excerpt_rss(); ?></description>
 				<guid isPermaLink="false"><?php the_guid(); ?></guid>
-				<author><?php the_author(); ?></author>
-				<image>
-					<url><?php echo esc_url( $postimage ); ?>"/></url>
-				</image>
+				<author><?php echo get_the_author_meta('user_email', $post->post_author) . ' (' . get_the_author_meta('first_name', $post->post_author) . ' ' . get_the_author_meta('last_name', $post->post_author) . ')'; ?></author>
+				<media:thumbnail url='<?php echo esc_url( $postimage ); ?>' height='200' width='200' />
 				<pubDate><?php echo mysql2date( 'D, d M Y H:i:s +0000', get_post_time( 'Y-m-d H:i:s', true ), false ); ?></pubDate>
 				<content:encoded>
 					<![CDATA[<?php echo the_excerpt_rss(); echo $postlink; ?>]]>

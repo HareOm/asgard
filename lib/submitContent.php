@@ -22,7 +22,7 @@ if(wp_verify_nonce( $_POST['_wpnonce'], 'submit_' . $postType) )  {
             'post_content'  => $content,
             'post_excerpt'  => $excerpt,
             'post_category' => array($cat),  // Usable for custom taxonomies too
-            'post_status'   => 'pending',  // Choose: publish, preview, future, etc.
+            'post_status'   => 'publish',  // Choose: publish, preview, future, etc.
             'post_type'     => $postType  // Use a custom post type if you want to
         );
 
