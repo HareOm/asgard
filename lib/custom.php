@@ -3,6 +3,8 @@
  * Custom functions
  */
 
+add_image_size( 'feature', '750', '500', false );
+
 function the_date_filter($post_type = NULL) {
 
 if( !$post_type ){

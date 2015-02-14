@@ -22,7 +22,7 @@
       </div>
       <?php elseif( has_post_thumbnail() ): ?>
       <div class="the-image">
-        <?php the_post_thumbnail() ?>
+        <?php the_post_thumbnail('feature') ?>
       </div>
       <?php endif ?>
       <?php asgard_share_post() ?>
