@@ -56,8 +56,12 @@ function wpmu_signup_stylesheet() {
 		#headerimg {
 			text-align: center;
 		}
+		#setupform input[type="email"],
+		#setupform input[type="text"] {
+			color: #333;
+		}
 		.mu_register form { margin-top: 2em; }
-		.mu_register h2 { text-align: center; }		
+		.mu_register h2 { text-align: center; }
 		.mu_register .error { font-weight:700; padding:10px; color:#333333; background:#FFEBE8; border:1px solid #CC0000; }
 		.mu_register input[type="submit"],
 			.mu_register #blog_title,
@@ -436,8 +440,16 @@ function signup_user( $user_name = '', $user_email = '', $errors = '' ) {
 	 * }
 	 */
 	$filtered_results = apply_filters( 'signup_user_init', $signup_user_defaults );
-	$user_name = $filtered_results['user_name'];
-	$user_email = $filtered_results['user_email'];
+	if( isset($_POST['user_login']) ) {
+		$user_name = $_POST['user_login'];
+	} else {
+		$user_name = $filtered_results['user_name'];
+	}
+	if( isset($_POST['user_email']) ) {
+		$user_email = $_POST['user_email'];
+	} else {
+		$user_email = $filtered_results['user_email'];
+	}
 	$errors = $filtered_results['errors'];
 
 	?>

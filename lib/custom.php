@@ -190,7 +190,7 @@ function asgard_registration($size=""){
     document.getElementById("user_login").value = user_email;
   }
 </script>
-<form class="form-registration" action="<?php echo site_url('wp-login.php?action=register', 'login_post') ?>" method="post">
+<form class="form-registration" action="<?php echo site_url('wp-signup.php') ?>" method="post">
   <input type="hidden" name="user_login" value="" id="user_login" class="input" />
   <div class="input-group">
     <input type="text" name="user_email" placeholder="E-Mail" id="user_email" class="form-control<?php if($size=="lg") echo ' input-lg'; ?>" onkeyup="generateUsername()">
