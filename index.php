@@ -2,7 +2,12 @@
 //SET UP VARS
 $post_type = array('post','image','video','link');
 
-$date = $_GET['date'];
+if( $_GET['date'] ) {
+  $date = $_GET['date'];
+} else {
+  $date = "all";
+}
+
 $today = getdate();
 $category = get_query_var('cat');
 
@@ -34,9 +39,12 @@ $args = array(
   'meta_key'       => 'hethens_vote_count',
   'orderby'        => 'meta_value_num date',
   'cat'            => $category,
-	'date_query'     => array($date_query),
-  'paged'          => $paged
+  'paged'          => $paged,
+//  'date_query'     => array($date_query)
 );
+if( $date != "all" ) {
+  $args['date_query'] = array($date_query);
+}
 $media_query = new WP_Query( $args );
 
 ?>
@@ -67,7 +75,7 @@ $media_query = new WP_Query( $args );
         <?php the_type_filter("all") ?>
       </div>
       <div class="form-group">
-        <?php the_date_filter() ?>
+        <?php the_date_filter(NULL, $date) ?>
       </div>
     </div>
   </div>

@@ -86,7 +86,7 @@ $media_query = new WP_Query( $args );
         <?php the_type_filter($post_type) ?>
       </div>
       <div class="form-group">
-        <?php the_date_filter($post_type) ?>
+        <?php the_date_filter($post_type, $date) ?>
       </div>
     </div>
   </div>

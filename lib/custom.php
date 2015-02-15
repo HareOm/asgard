@@ -5,8 +5,10 @@
 
 add_image_size( 'feature', '750', '500', false );
 
-function the_date_filter($post_type = NULL) {
-
+function the_date_filter($post_type = NULL, $date = NULL) {
+if( !$date ) {
+  $date = $_GET['date'];
+}
 if( !$post_type ){
   $post_type = get_post_type();
 }
@@ -14,10 +16,10 @@ if( !$post_type ){
 ?>
 
 <select class="form-control input-sm" onchange="javascript:location.href = this.value;">
-  <option<?php if( $_GET['date'] == 'today') echo ' selected'; ?> value="<?php echo add_query_arg("date", "today") ?>">Today
-  <option<?php if( $_GET['date'] == 'week') echo ' selected'; ?> value="<?php echo add_query_arg("date", "week") ?>">This Week
-  <option<?php if( $_GET['date'] == 'month') echo ' selected'; ?> value="<?php echo add_query_arg("date", "month") ?>">This Month
-  <option<?php if( $_GET['date'] == 'all') echo ' selected'; ?> value="<?php echo add_query_arg("date", "all") ?>">All Time
+  <option<?php if( $date == 'today') echo ' selected'; ?> value="<?php echo add_query_arg("date", "today") ?>">Today
+  <option<?php if( $date == 'week') echo ' selected'; ?> value="<?php echo add_query_arg("date", "week") ?>">This Week
+  <option<?php if( $date == 'month') echo ' selected'; ?> value="<?php echo add_query_arg("date", "month") ?>">This Month
+  <option<?php if( $date == 'all') echo ' selected'; ?> value="<?php echo add_query_arg("date", "all") ?>">All Time
 </select>
 
 <?php
