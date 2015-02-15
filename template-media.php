@@ -15,6 +15,8 @@ if( get_post_meta($post->ID, 'post_type', TRUE) ) {
 
 if( $_GET['date'] ) {
   $date = $_GET['date'];
+} elseif(get_option('default_date')) {
+  $date = get_option('default_date');
 } else {
   $date = "all";
 }

@@ -4,6 +4,8 @@ $post_type = array('post','image','video','link');
 
 if( $_GET['date'] ) {
   $date = $_GET['date'];
+} elseif(get_option('default_date')) {
+  $date = get_option('default_date');
 } else {
   $date = "all";
 }

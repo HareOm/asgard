@@ -179,6 +179,22 @@ function asgard_customizer( $wp_customize ) {
       'title' => 'Media Options',
       'description' => 'Options for media pages.',
   ) );
+  //Default Date
+  $wp_customize->add_setting( 'default_date', array(
+    'default' => 'all',
+    'type' => 'option'
+  ));
+  $wp_customize->add_control( 'default_date', array(
+      'type' => 'select',
+      'choices' => array(
+        'all' => "All time",
+        'month' => "This month",
+        'week' => "This week",
+        'today' => "Today"
+      ),
+      'label' => 'Default Date',
+      'section' => 'media_options',
+  ) );
   //Article Page
   $wp_customize->add_setting( 'article_page', array(
       'sanitize_callback' => 'asgard_sanitize_integer',
