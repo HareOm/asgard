@@ -4,7 +4,7 @@
 [![Built with Roots]](https://github.com/roots/roots-sass)
 
 
-##POST LAUNCH
+##Task List
 - Submit Link: Preview styles
 - Not logged in: submit log in/register forms on page
 - Style PM page
@@ -17,12 +17,14 @@
 - Better Buddypress integration
 - Featuring posts (valhalla logo)
 - Profile city input autocomplete
-- ~~Google on front page is for sharing, not for following.~~
 - Twitter on front page should be for following.
-- ~~Learn More button brings you to a random video.~~
 - Can not up vote on video/photo/article/link page
-- ~~Be capable to edit Linked-Articles !~~
-- ~~Make Videos size properly.~~
-- ~~Linked Articles make user look like the author.~~
 - Make Author Photo Larger
 - Give Author more ability to customize profile (location)
+- Install SSL certificate
+- Switch email GMail hosting
+- Send out password resets
+- Voting on single pages
+- Once submitted, redirect directly to new post
+- Video thumbnails not getting created
+- Buddypress registration to MadMimi
