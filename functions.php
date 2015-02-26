@@ -18,6 +18,7 @@ require_once locate_template('/lib/widgets.php');         // Sidebars and widget
 require_once locate_template('/lib/scripts.php');         // Scripts and stylesheets
 require_once locate_template('/lib/custom.php');          // Custom functions
 require_once locate_template('/lib/post-types.php');      // Register Custom Post Types
+require_once locate_template('/lib/MadMimi.php');      // Register Custom Post Types
 
 //Asgard Includes
 require_once locate_template('/vendor/advanced-custom-fields/acf.php');      // Advanced Custom Fields
