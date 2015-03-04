@@ -36,11 +36,17 @@ if(wp_verify_nonce( $_POST['_wpnonce'], 'submit_' . $postType) )  {
               {
                 add_post_meta($postID, $key, $value, true);
                 //Add link thumb as featured image too
+
                 if( $key == "link_thumbnail_url" ) {
                   set_featured_image_from_src( $value, $postID );
                 }
               }
+
+              if( function_exists('get_video_thumbnail') ) {
+                get_video_thumbnail($postID);
+              }
             }
+
 
             // Loop through submitted images and save the first one as featured image
             if (isset($_FILES['image']) && $_FILES['image']['size'] > 0) {
