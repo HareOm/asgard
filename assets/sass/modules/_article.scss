@@ -10,7 +10,8 @@ $article-item-meta: 35px;
   border-radius: $radius;
 
   img {
-    float: left;
+    width: 100%;
+    height: auto;
   }
 
   a {
@@ -82,9 +83,21 @@ $article-item-meta: 35px;
       margin: 0;
     }
     p {
-      font-size: 0.8em;
+      display: none;
     }
   }
+
+  @include bp(phone) {
+    .article-item-content p {
+      display: block;
+      font-size: 0.8em;
+    }
+    .article-item img {
+      float: left;
+      width: auto;
+    }
+  }
+
   .article-item-title {
     font-size: 1.5em;
   }
