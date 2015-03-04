@@ -53,8 +53,8 @@ if(wp_verify_nonce( $_POST['_wpnonce'], 'submit_' . $postType) )  {
                 }
             }
 
-            $return_url = add_query_arg('status', 'pending', $_POST['return']);
-            wp_redirect($return_url);
+            //$return_url = add_query_arg('status', 'pending', $_POST['return']);
+            wp_redirect(get_permalink($postID));
             exit;
 
         }else{
